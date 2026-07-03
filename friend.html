@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>光遇好友樹規劃器 | Sky Friend Tree Planner</title>
+
+<style>
+/* --- CSS 變數：輕鬆管理亮/暗色主題 --- */
+:root {
+    --bg-color: #f4f6f8;
+    --text-color: #333;
+    --text-muted: #666;
+    --card-bg: #ffffff;
+    --header-bg: linear-gradient(135deg, #66a6ff, #89f7fe);
+    --border-color: #e0e0e0;
+    --primary-color: #66a6ff;
+    --primary-hover: #5597f0;
+    --danger-color: #e74c3c;
+    --success-color: #4CAF50;
+    --success-bg: #e7fbe7;
+    --warning-color: #f1c40f;
+    --candle-color: #f39c12; 
+    --preview-color: #9b59b6;
+    --item-bg: #fdfdfd;
+    --item-border: #dcdcdc;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+    --modal-bg: rgba(0,0,0,0.5);
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a20;
+    --text-color: #f0f0f0;
+    --text-muted: #aaa;
+    --card-bg: #2a2a35;
+    --header-bg: linear-gradient(135deg, #1e3c72, #2a5298);
+    --border-color: #444;
+    --primary-color: #4e8cf5;
+    --item-bg: #33333e;
+    --item-border: #555;
+    --success-color: #27ae60;
+    --success-bg: #4a3b22;
+    --candle-color: #e67e22; 
+    --shadow: 0 4px 12px rgba(0,0,0,0.3);
+    --modal-bg: rgba(0,0,0,0.7);
+}
+
+* { box-sizing: border-box; }
+body { font-family: "Segoe UI", -apple-system, sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; padding: 0; transition: 0.3s; }
+
+/* --- 頂部導航列 --- */
+header { background: var(--header-bg); color: #fff; padding: 15px 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; }
+.header-title { font-size: 20px; font-weight: bold; letter-spacing: 1px; text-align: center; flex: 1; min-width: 200px;}
+.top-controls { display: flex; gap: 8px; align-items: center; font-size: 13px;}
+.top-select, .top-btn { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.4); color: white; padding: 6px 12px; border-radius: 20px; cursor: pointer; transition: 0.2s; outline: none; backdrop-filter: blur(4px); }
+.top-select:hover, .top-btn:hover { background: rgba(255,255,255,0.3); }
+.top-select option { background: #333; color: #fff; }
+
+/* --- 主控台面版 --- */
+.dashboard { background-color: var(--card-bg); padding: 20px; margin: 20px auto; width: 92%; max-width: 650px; border-radius: 16px; box-shadow: var(--shadow); border: 1px solid var(--border-color); transition: 0.3s; }
+
+.profile-section { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid var(--border-color); }
+.friend-selector-btn { flex: 1; min-width: 150px; padding: 10px; border-radius: 8px; background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: bold; cursor: pointer; text-align: left; display: flex; justify-content: space-between; align-items: center; }
+.friend-selector-btn:hover { border-color: var(--primary-color); }
+
+.inventory-section { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: bold; color: var(--text-muted); background: var(--bg-color); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-color); }
+.inventory-section input { width: 60px; padding: 4px; border-radius: 4px; border: 1px solid #ccc; background: var(--card-bg); color: var(--text-color); font-weight: bold; text-align: center; }
+
+/* --- 進度條與統計 --- */
+.progress-section { margin-bottom: 20px; }
+.progress-header { display: flex; justify-content: space-between; font-size: 14px; font-weight: bold; margin-bottom: 8px; }
+.progress-header .highlight { color: var(--success-color); font-size: 16px; }
+.progress-container { width: 100%; height: 12px; background: var(--border-color); border-radius: 6px; overflow: hidden; }
+.progress-bar { height: 100%; background: var(--success-color); width: 0%; transition: width 0.5s ease; }
+
+.actions-group { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 15px; }
+button { background-color: var(--primary-color); color: white; border: none; border-radius: 8px; padding: 8px 14px; font-size: 14px; cursor: pointer; transition: 0.2s; font-weight: 600; }
+button:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
+button:active { transform: translateY(0); }
+
+.btn-secondary { background-color: #888; text-decoration: none; display: inline-block; }
+.btn-danger { background-color: var(--danger-color); }
+.btn-preview { background-color: var(--preview-color); }
+.btn-preview.active { background-color: var(--warning-color); color: #222; box-shadow: 0 0 12px var(--warning-color); }
+
+.hint-box { background: rgba(102, 166, 255, 0.1); border-radius: 8px; padding: 12px; font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-top: 10px; }
+
+/* --- 樹狀圖顯示區 --- */
+#treeContainer { display: flex; flex-direction: column-reverse; align-items: center; gap: 25px; padding: 20px; margin: 0 auto; max-width: 800px; }
+.tier-row { display: flex; flex-direction: column; align-items: center; width: 100%; padding: 15px 0; border-bottom: 1px dashed var(--border-color); position: relative; }
+.tier-label { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; font-weight: bold; background: var(--bg-color); padding: 0 10px; position: relative; top: -25px; border-radius: 10px; }
+
+.items-row { display: flex; justify-content: flex-start; gap: 15px; width: 255px; margin-bottom: 10px; }
+.item { width: 75px; text-align: center; cursor: pointer; border: 2px solid var(--item-border); border-radius: 14px; padding: 8px 6px 12px 6px; transition: 0.3s; background-color: var(--item-bg); user-select: none; position: relative; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.item:hover { border-color: var(--primary-color); transform: translateY(-4px) scale(1.03); }
+.item.unlocked { border-color: var(--success-color); background-color: var(--success-bg); box-shadow: 0 0 8px rgba(76, 175, 80, 0.3); }
+.item.locked { opacity: 0.75; filter: grayscale(80%); }
+.item img { width: 100%; height: auto; border-radius: 10px; margin-bottom: 6px; pointer-events: none; background: rgba(0,0,0,0.05); aspect-ratio: 1; object-fit: contain;}
+.item-name { font-size: 12px; font-weight: bold; line-height: 1.2; margin-bottom: 0px; color: var(--text-color); }
+
+/* --- 徽章 UI (蠟燭與解鎖狀態) --- */
+.item-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--candle-color);
+    color: white;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 3px 6px;
+    border-radius: 12px;
+    border: 2px solid var(--item-bg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    transition: 0.3s;
+}
+.item.unlocked .item-badge {
+    background-color: var(--success-color);
+}
+.item.locked:hover .item-badge {
+    transform: scale(1.1);
+}
+
+/* 解鎖特效動畫 */
+@keyframes unlockPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); filter: brightness(1.2); }
+    100% { transform: scale(1); }
+}
+.item.animating { animation: unlockPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
+/* --- 客製化 Modal (彈窗) 與 Toast --- */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-bg); display: none; justify-content: center; align-items: center; z-index: 1000; opacity: 0; transition: opacity 0.2s; backdrop-filter: blur(3px); }
+.modal-overlay.active { display: flex; opacity: 1; }
+.modal-box { background: var(--card-bg); padding: 25px; border-radius: 16px; width: 90%; max-width: 400px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); transform: translateY(20px); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.modal-overlay.active .modal-box { transform: translateY(0); }
+.modal-title { margin: 0 0 15px 0; font-size: 18px; color: var(--text-color); }
+.modal-content-text { margin-bottom: 20px; font-size: 14px; color: var(--text-muted); line-height: 1.6; white-space: pre-line; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 10px; }
+.modal-input { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color); margin-bottom: 15px; outline: none; }
+
+.friend-list { max-height: 250px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; padding-right: 5px; }
+.friend-list::-webkit-scrollbar { width: 6px; }
+.friend-list::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
+.friend-item { padding: 12px; background: var(--bg-color); border-radius: 8px; border: 1px solid var(--border-color); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: 0.2s; }
+.friend-item:hover { border-color: var(--primary-color); background: var(--item-bg); }
+.friend-item.active { border-color: var(--success-color); border-width: 2px; }
+.friend-item-info { font-size: 12px; color: var(--text-muted); }
+
+/* Toast 提示條 */
+#toastContainer { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1001; display: flex; flex-direction: column; gap: 10px; pointer-events: none; }
+.toast { background: rgba(50, 50, 50, 0.95); color: #fff; padding: 12px 24px; border-radius: 30px; font-size: 14px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); animation: toastFadeIn 0.3s, toastFadeOut 0.3s 2.7s forwards; }
+@keyframes toastFadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes toastFadeOut { from { opacity: 1; } to { opacity: 0; } }
+
+@media (max-width: 480px) {
+    .header-title { order: -1; min-width: 100%; margin-bottom: 5px; }
+    .item { width: 65px; padding: 6px 4px 10px 4px; }
+    .item-badge { font-size: 10px; padding: 2px 5px; top: -6px; right: -6px; }
+    .items-row { width: 225px; } 
+}
+.collapse-arrow { font-size: 14px; transition: transform 0.25s ease; color: var(--text-muted); }
+.collapsible-header.collapsed .collapse-arrow { transform: rotate(-90deg); }
+.collapsible-body { overflow: hidden; max-height: 2000px; transition: max-height 0.3s ease, opacity 0.25s ease, margin-top 0.25s ease; opacity: 1; margin-top: 8px; }
+.collapsible-body.collapsed { max-height: 0; opacity: 0; margin-top: 0; }
+.version-item { border-left: 3px solid var(--danger-color); padding: 4px 0 4px 12px; margin-bottom: 10px; }
+.version-header { display: flex; gap: 10px; align-items: baseline; }
+.version-tag { font-weight: bold; font-size: 13px; }
+.version-date { font-size: 11px; color: var(--text-muted); }
+.version-content { margin: 4px 0 0; padding-left: 18px; font-size: 12.5px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="top-controls">
+        <span id="ui-lang-label">語言</span>
+        <select id="langSelect" class="top-select" onchange="changeLang()">
+            <option value="zh-hant">繁體中文</option>
+            <option value="zh">简体中文</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+    <div class="header-title" id="ui-title">光遇好友樹規劃器</div>
+    <div class="top-controls">
+        <button class="top-btn" onclick="toggleTheme()">🌓 Theme</button>
+        <a href="index.html" class="top-btn">🏠 Home</a>
+    </div>
+    
+</header>
+
+<div class="dashboard">
+    <div class="profile-section">
+        <div class="friend-selector-btn" onclick="openFriendModal()">
+            <span id="currentFriendName">載入中...</span>
+            <span>▼</span>
+        </div>
+        <div class="inventory-section">
+            🕯️ <span id="ui-my-candles">我的蠟燭:</span>
+            <input type="number" id="myCandles" value="0" min="0" onchange="saveMyCandles()">
+        </div>
+    </div>
+
+    <div class="progress-section">
+        <div class="progress-header">
+            <span><span id="ui-t1">總好感度:</span> <span id="totalAffection" class="highlight">0</span></span>
+            <span id="affProgressText" style="color: var(--text-muted); font-size: 12px;">0 / 0</span>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" id="affProgressBar"></div>
+        </div>
+        <div style="text-align: center; margin-top: 10px; font-size: 14px; font-weight: bold; color: var(--text-muted);">
+            <span id="ui-t2">已花費蠟燭:</span> <span id="totalCandleSpent" style="color: var(--danger-color);">0</span> 
+        </div>
+    </div>
+    
+    <div class="actions-group">
+        <button onclick="addAffection(1)" id="ui-btn-1">點火 (+1)</button>
+        <button onclick="addAffection(5)" id="ui-btn-5">送心 (+5)</button>
+        <button onclick="addAffection(10)" id="ui-btn-10">禮包 (+10)</button>
+    </div>
+    
+    <div class="actions-group" style="border-top: 1px dashed var(--border-color); padding-top: 15px; margin-bottom: 0;">
+        <button id="btnPreview" class="btn-preview" onclick="togglePreview()">👀 全解鎖預覽</button>
+        <button class="btn-danger" onclick="confirmResetTree()" id="ui-reset">重置樹狀圖</button>
+        <button class="btn-secondary" onclick="exportData()" id="ui-export">📥 匯出</button>
+        <button class="btn-secondary" onclick="document.getElementById('importFile').click()" id="ui-import">📤 匯入</button>
+        <input type="file" id="importFile" accept=".json" style="display:none;" onchange="importData(event)">
+    </div>
+    
+    <div class="hint-box">
+        <div id="ui-hint">💡 提示：在未解鎖的圖示上 <b>點擊右鍵 (手機長按)</b> 可計算目標花費。
+        </div>
+            <div class="collapsible-header" id="changelog-header" onclick="toggleChangelog()" style="cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
+            <span>📝更新紀錄</span>
+            <span class="collapse-arrow">▼</span>
+            </div>
+        <div class="collapsible-body" id="changelog-body">
+            <div id="changelog-list"></div>
+        </div>
+    </div>
+</div>
+
+<div id="treeContainer"></div>
+
+<!-- ================= Modal 彈窗區塊 ================= -->
+
+<div id="friendModal" class="modal-overlay" onclick="closeModalOnBG(event, 'friendModal')">
+    <div class="modal-box">
+        <h3 class="modal-title" id="ui-fm-title">選擇好友</h3>
+        <input type="text" id="friendSearch" class="modal-input" placeholder="🔍 搜尋好友名稱..." oninput="renderFriendList()">
+        <div id="friendListContainer" class="friend-list"></div>
+        <div class="modal-actions" style="justify-content: space-between;">
+            <button class="btn-danger" onclick="confirmDeleteProfile()" id="ui-del-friend">刪除當前</button>
+            <div>
+                <button class="btn-secondary" onclick="closeModal('friendModal')" id="ui-btn-cancel-fm">取消</button>
+                <button onclick="promptAddProfile()" id="ui-add-friend">➕ 新增</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="alertModal" class="modal-overlay" onclick="closeModalOnBG(event, 'alertModal')">
+    <div class="modal-box">
+        <h3 class="modal-title" id="alertTitle">提示</h3>
+        <div class="modal-content-text" id="alertContent"></div>
+        <div class="modal-actions">
+            <button onclick="closeModal('alertModal')" id="ui-btn-ok">確定</button>
+        </div>
+    </div>
+</div>
+
+<div id="confirmModal" class="modal-overlay" onclick="closeModalOnBG(event, 'confirmModal')">
+    <div class="modal-box">
+        <h3 class="modal-title" id="confirmTitle">確認</h3>
+        <div class="modal-content-text" id="confirmContent"></div>
+        <div class="modal-actions">
+            <button class="btn-secondary" onclick="closeModal('confirmModal')" id="ui-btn-cancel-cm">取消</button>
+            <button class="btn-danger" id="confirmBtn" onclick="">確定</button>
+        </div>
+    </div>
+</div>
+
+<div id="promptModal" class="modal-overlay" onclick="closeModalOnBG(event, 'promptModal')">
+    <div class="modal-box">
+        <h3 class="modal-title" id="promptTitle">請輸入</h3>
+        <input type="text" id="promptInput" class="modal-input">
+        <div class="modal-actions">
+            <button class="btn-secondary" onclick="closeModal('promptModal')" id="ui-btn-cancel-pm">取消</button>
+            <button id="promptBtn" onclick="">確定</button>
+        </div>
+    </div>
+    
+</div>
+
+<div id="toastContainer"></div>
+
+<script>
+// --- 多國語言設定 ---
+const uiDict = {
+    'zh-hant': { langLabel: '語言', title: '好友樹規劃器', addFr: '➕ 新增', delFr: '刪除當前', t1: '總好感度:', t2: '已花費蠟燭:', b1: '點火 (+1)', b5: '送心 (+5)', b10: '禮包 (+10)', pv: '👀 全解鎖預覽', pvExit: '🔙 退出預覽', rst: '重置樹狀圖', export: '📥 匯出', import: '📤 匯入', myCandles: '我的蠟燭:', fmTitle: '選擇好友', search: '🔍 搜尋好友名稱...', cancel: '取消', ok: '確定', 
+        hint: `💡 提示：在未解鎖的圖示上 <b>點擊右鍵 (手機長按)</b> 可計算目標花費。`, 
+        promptName: '請輸入好友暱稱：', noAff: '好感度不足', need: '需要', target: '🎯 目標計算', errOrd: '請先解鎖前一級的動作！',
+        delConfirm: '確認刪除當前好友紀錄嗎？', resetConfirm: '⚠️ 警告：這將清空當前好友的所有解鎖紀錄，確定嗎？', cancelUnlock: '確定要取消解鎖「{0}」嗎？',
+        c_enough: '✅ 蠟燭充足', c_short: '❌ 蠟燭不足',
+        // --- 新增的彈窗翻譯 ---
+        t_lv: '待解鎖等級：', t_can: '總需蠟燭：', t_inv: '庫存判定：', t_aff: '門檻好感度：', t_diff: '(還差 {0})', t_met: '(✅ 已達標)'
+    },
+    'zh': { langLabel: '语言', title: '好友树规划器', addFr: '➕ 新增', delFr: '删除当前', t1: '总好感度:', t2: '已花费蜡烛:', b1: '点火 (+1)', b5: '送心 (+5)', b10: '礼包 (+10)', pv: '👀 全解锁预览', pvExit: '🔙 退出预览', rst: '重置树状图', export: '📥 导出', import: '📤 导入', myCandles: '我的蜡烛:', fmTitle: '选择好友', search: '🔍 搜索好友名称...', cancel: '取消', ok: '确定', 
+        hint: `💡 提示：在未解锁的图标上 <b>点击右键 (手机长按)</b> 可计算目标花费。`, 
+        promptName: '请输入好友昵称：', noAff: '好感度不足', need: '需要', target: '🎯 目标计算', errOrd: '请先解锁前一级的动作！',
+        delConfirm: '确认删除当前好友纪录吗？', resetConfirm: '⚠️ 警告：这将清空当前好友的所有解锁纪录，确定吗？', cancelUnlock: '确定要取消解锁「{0}」吗？',
+        c_enough: '✅ 蜡烛充足', c_short: '❌ 蜡烛不足',
+        // --- 新增的彈窗翻譯 ---
+        t_lv: '待解锁等级：', t_can: '总需蜡烛：', t_inv: '库存判定：', t_aff: '门槛好感度：', t_diff: '(还差 {0})', t_met: '(✅ 已达标)'
+    },
+    'en': { langLabel: 'Lang', title: 'Friend Tree Planner', addFr: '➕ Add', delFr: 'Del Current', t1: 'Affection:', t2: 'Candles Spent:', b1: 'Light (+1)', b5: 'Heart (+5)', b10: 'Pack (+10)', pv: '👀 Preview All', pvExit: '🔙 Exit Preview', rst: 'Reset Tree', export: '📥 Export', import: '📤 Import', myCandles: 'My Candles:', fmTitle: 'Select Friend', search: '🔍 Search name...', cancel: 'Cancel', ok: 'OK', 
+        hint: `💡 Hint: <b>Right-click (long-press)</b> to calc cost.`,
+        promptName: 'Enter friend name:', noAff: 'Not enough affection', need: 'Requires', target: '🎯 Target Cost', errOrd: 'Unlock previous level first!',
+        delConfirm: 'Delete current friend record?', resetConfirm: '⚠️ Warning: This will reset all unlocks for this friend. Are you sure?', cancelUnlock: 'Cancel unlock for "{0}"?',
+        c_enough: '✅ Enough Candles', c_short: '❌ Need More Candles',
+        // --- 新增的彈窗翻譯 ---
+        t_lv: 'To Unlock: ', t_can: 'Total Candles: ', t_inv: 'Inventory: ', t_aff: 'Req. Affection: ', t_diff: '(Need {0} more)', t_met: '(✅ Met)'
+    }
+};
+
+const versionData = [
+    { ver: 'v1.0.0', date: '2026-07-04',changes: {
+            'zh-hant': [
+                '首次發布：好感度樹狀圖與蠟燭花費追蹤',
+                '新增好友多檔案切換',
+                '新增匯出/匯入功能',
+                '新增全解鎖預覽模式',
+                '新增好感度目標計算功能'
+                ],
+
+                'zh': [
+                '首次发布：支持 QR Code 扫描与手动粘贴两种输入方式',
+                '首次发布：好感度树状图与蜡烛花费追踪',
+                '新增好友多档案切换',
+                '新增导出/导入功能',
+                '新增全解锁预览模式',
+                '新增好感度目标计算功能'
+                ],
+
+                'en': [
+                'Initial release: supports QR code scan and manual paste input',
+                'Initial release: affinity tree diagram and candle cost tracking',
+                'Added multi-profile switching for friends',
+                'Added export/import functionality',
+                'Added full-unlock preview mode',
+                'Added affinity goal calculation feature'
+                ]
+        }
+    }
+];
+
+let currentLang = localStorage.getItem('sky_tool_lang') || 'zh-hant';
+let rawJSONData = {};
+const TIER_REQ_EXP = { 1: 0, 2: 10, 3: 40, 4: 60, 5: 100, 6: 130, 7: 170 };
+const TIER_KEYS = [0, 10, 40, 60, 100, 130, 170]; 
+
+let items = [];
+let affection = 0;
+const AFFECTION_PER_UNLOCK = 10;
+
+let profiles = JSON.parse(localStorage.getItem('friendProfiles')) || [{ id: 'friend_default', name: '預設好友 / Default' }];
+let currentProfileId = localStorage.getItem('currentProfileId') || profiles[0].id;
+let isPreviewMode = false;
+
+// --- 初始化 ---
+function initApp() {
+    const theme = localStorage.getItem('sky_tool_theme') || 'light';
+    if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    document.getElementById('langSelect').value = currentLang;
+    
+    document.getElementById('myCandles').value = localStorage.getItem('sky_my_candles') || 0;
+
+    fetch('data/friend_tree.json')
+    .then(resp => resp.json())
+    .then(data => {
+        rawJSONData = data;
+        finalizeInit();
+    }).catch(err => {
+        document.getElementById('treeContainer').innerHTML = "<p style='color:red; text-align:center;'>無法載入資料 (Failed to load data). 確保 JSON 檔案存在於 data/friend_tree.json</p>";
+    });
+    renderChangelog();
+    if (localStorage.getItem('sky_tool_changelog_collapsed') !== '0') {
+        document.getElementById('changelog-body').classList.add('collapsed');
+        document.getElementById('changelog-header').classList.add('collapsed');
+    }
+    
+}
+
+function finalizeInit() {
+    updateUIText();
+    loadLangData();
+}
+
+// --- UI 客製化函式 (Modal & Toast) ---
+function showToast(msg) {
+    const container = document.getElementById('toastContainer');
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = msg;
+    container.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+}
+
+function openModal(id) { document.getElementById(id).classList.add('active'); }
+function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+function closeModalOnBG(event, id) { if(event.target.id === id) closeModal(id); }
+
+function showAlert(title, contentHTML) {
+    document.getElementById('alertTitle').textContent = title;
+    document.getElementById('alertContent').innerHTML = contentHTML;
+    openModal('alertModal');
+}
+
+function showConfirm(title, content, onConfirm) {
+    document.getElementById('confirmTitle').textContent = title;
+    document.getElementById('confirmContent').textContent = content;
+    const btn = document.getElementById('confirmBtn');
+    btn.onclick = () => { onConfirm(); closeModal('confirmModal'); };
+    openModal('confirmModal');
+}
+
+function showPrompt(title, onConfirm) {
+    document.getElementById('promptTitle').textContent = title;
+    const input = document.getElementById('promptInput');
+    input.value = '';
+    const btn = document.getElementById('promptBtn');
+    btn.onclick = () => { 
+        if(input.value.trim()){ onConfirm(input.value.trim()); closeModal('promptModal'); }
+    };
+    openModal('promptModal');
+    setTimeout(()=>input.focus(), 100);
+}
+
+function renderChangelog() {
+        const listContainer = document.getElementById('changelog-list');
+        if (!listContainer || typeof versionData === 'undefined') return;
+    
+        listContainer.innerHTML = versionData.map(item => {
+            const contentList = item.changes[currentLang] || item.changes['en'];
+            const listHtml = contentList.map(text => `<li>${text}</li>`).join('');
+    
+            return `
+                <div class="version-item">
+                    <div class="version-header">
+                        <span class="version-tag">${item.ver}</span>
+                        <span class="version-date">${item.date}</span>
+                    </div>
+                    <ul class="version-content">
+                        ${listHtml}
+                    </ul>
+                </div>
+            `;
+        }).join('');
+    }
+    
+
+// --- 切換邏輯 ---
+function toggleChangelog() {
+        const header = document.getElementById('changelog-header');
+        const body = document.getElementById('changelog-body');
+        const collapsed = body.classList.toggle('collapsed');
+        header.classList.toggle('collapsed', collapsed);
+        localStorage.setItem('sky_tool_changelog_collapsed', collapsed ? '1' : '0');
+    }
+
+function toggleTheme() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    localStorage.setItem('sky_tool_theme', isDark ? 'light' : 'dark');
+}
+
+function changeLang() {
+    currentLang = document.getElementById('langSelect').value;
+    localStorage.setItem('sky_tool_lang', currentLang);
+    updateUIText();
+    loadLangData();
+}
+
+function updateUIText() {
+    const t = uiDict[currentLang];
+    document.getElementById('ui-lang-label').textContent = t.langLabel;
+    document.getElementById('ui-title').textContent = t.title;
+    document.getElementById('ui-add-friend').textContent = t.addFr;
+    document.getElementById('ui-del-friend').textContent = t.delFr;
+    document.getElementById('ui-t1').textContent = t.t1;
+    document.getElementById('ui-t2').textContent = t.t2;
+    document.getElementById('ui-btn-1').textContent = t.b1;
+    document.getElementById('ui-btn-5').textContent = t.b5;
+    document.getElementById('ui-btn-10').textContent = t.b10;
+    document.getElementById('btnPreview').textContent = isPreviewMode ? t.pvExit : t.pv;
+    document.getElementById('ui-reset').textContent = t.rst;
+    document.getElementById('ui-export').textContent = t.export;
+    document.getElementById('ui-import').textContent = t.import;
+    document.getElementById('ui-my-candles').textContent = t.myCandles;
+    document.getElementById('ui-hint').innerHTML = t.hint;
+    document.getElementById('ui-fm-title').textContent = t.fmTitle;
+    document.getElementById('friendSearch').placeholder = t.search;
+    document.getElementById('ui-btn-cancel-fm').textContent = t.cancel;
+    document.getElementById('ui-btn-cancel-cm').textContent = t.cancel;
+    document.getElementById('ui-btn-cancel-pm').textContent = t.cancel;
+    document.getElementById('ui-btn-ok').textContent = t.ok;
+}
+
+function loadLangData() {
+    const langData = rawJSONData[currentLang] || rawJSONData['zh-hant'] || rawJSONData['en'] || {};
+    if(langData["FriendTree"]) {
+        const treeData = langData["FriendTree"].items;
+        items = treeData.map(item => ({ ...item, baseKey: `action_${item.actionId}_lv${item.level}` }));
+        loadCurrentProfileData();
+    }
+}
+
+// --- 好友清單邏輯 ---
+function openFriendModal() {
+    document.getElementById('friendSearch').value = '';
+    renderFriendList();
+    openModal('friendModal');
+}
+
+function renderFriendList() {
+    const term = document.getElementById('friendSearch').value.toLowerCase();
+    const container = document.getElementById('friendListContainer');
+    container.innerHTML = '';
+    
+    let sorted = profiles.map(p => { return { ...p, aff: parseInt(localStorage.getItem(`${p.id}_affection`)) || 0 }; });
+    sorted.sort((a,b) => b.aff - a.aff);
+    if(term) sorted = sorted.filter(p => p.name.toLowerCase().includes(term));
+
+    sorted.forEach(p => {
+        const div = document.createElement('div');
+        div.className = `friend-item ${p.id === currentProfileId ? 'active' : ''}`;
+        div.innerHTML = `<span style="font-weight:bold;">${p.name}</span><span class="friend-item-info">💖 ${p.aff}</span>`;
+        div.onclick = () => { selectProfile(p.id); closeModal('friendModal'); };
+        container.appendChild(div);
+    });
+}
+
+function selectProfile(id) {
+    if (isPreviewMode) togglePreview(); 
+    currentProfileId = id;
+    localStorage.setItem('currentProfileId', currentProfileId);
+    loadCurrentProfileData();
+}
+
+function promptAddProfile() {
+    closeModal('friendModal');
+    showPrompt(uiDict[currentLang].promptName, (name) => {
+        const newId = 'friend_' + Date.now();
+        profiles.push({ id: newId, name: name });
+        localStorage.setItem('friendProfiles', JSON.stringify(profiles));
+        selectProfile(newId);
+        showToast('✅ 已新增好友');
+    });
+}
+
+function confirmDeleteProfile() {
+    if (profiles.length <= 1) {
+        showToast('❌ 無法刪除最後一個好友紀錄');
+        return;
+    }
+    closeModal('friendModal');
+    showConfirm('刪除好友', uiDict[currentLang].delConfirm, () => {
+        localStorage.removeItem(`${currentProfileId}_affection`);
+        items.forEach(i => localStorage.removeItem(`${currentProfileId}_${i.baseKey}`));
+        profiles = profiles.filter(p => p.id !== currentProfileId);
+        localStorage.setItem('friendProfiles', JSON.stringify(profiles));
+        selectProfile(profiles[0].id);
+        showToast('🗑️ 已刪除');
+    });
+}
+
+function loadCurrentProfileData() {
+    const currentProfile = profiles.find(p => p.id === currentProfileId) || profiles[0];
+    document.getElementById('currentFriendName').textContent = currentProfile.name;
+    
+    affection = parseInt(localStorage.getItem(`${currentProfileId}_affection`)) || 0;
+    items.forEach(i => {
+        i.unlocked = JSON.parse(localStorage.getItem(`${currentProfileId}_${i.baseKey}`) || "false");
+    });
+    updateUI();
+}
+
+function saveState(){
+    if (isPreviewMode) return; 
+    items.forEach(i => localStorage.setItem(`${currentProfileId}_${i.baseKey}`, i.unlocked));
+    localStorage.setItem(`${currentProfileId}_affection`, affection);
+}
+
+function saveMyCandles() {
+    let val = document.getElementById('myCandles').value;
+    if(val < 0) val = 0;
+    localStorage.setItem('sky_my_candles', val);
+}
+
+function addAffection(amount) {
+    if (isPreviewMode) return;
+    affection += amount;
+    saveState();
+    updateUI();
+    showToast(`💖 好感度 +${amount}`);
+}
+
+function confirmResetTree(){
+    if (isPreviewMode) return;
+    showConfirm('重置', uiDict[currentLang].resetConfirm, () => {
+        items.forEach(i => i.unlocked = false);
+        affection = 0;
+        saveState();
+        updateUI();
+        showToast('🔄 已重置');
+    });
+}
+
+function togglePreview() {
+    isPreviewMode = !isPreviewMode;
+    const btn = document.getElementById('btnPreview');
+    if (isPreviewMode) {
+        btn.classList.add('active');
+        btn.textContent = uiDict[currentLang].pvExit;
+    } else {
+        btn.classList.remove('active');
+        btn.textContent = uiDict[currentLang].pv;
+    }
+    updateUI();
+}
+
+function calcTotals(){
+    let totalCandleSpent = 0;
+    items.forEach(i=>{ if(i.unlocked) totalCandleSpent += (parseInt(i.cst) || 0); });
+    return totalCandleSpent;
+}
+
+// --- 匯出與匯入 ---
+function exportData() {
+    const data = { version: 1, profiles: profiles, myCandles: document.getElementById('myCandles').value, dataStore: {} };
+    profiles.forEach(p => {
+        data.dataStore[`${p.id}_affection`] = localStorage.getItem(`${p.id}_affection`) || 0;
+        items.forEach(i => {
+            let key = `${p.id}_${i.baseKey}`;
+            data.dataStore[key] = localStorage.getItem(key) || "false";
+        });
+    });
+
+    const blob = new Blob([JSON.stringify(data, null, 4)], {type: 'application/json'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'sky_friends_backup.json';
+    a.click();
+    showToast('📥 匯出成功');
+}
+
+function importData(event) {
+    const file = event.target.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        try {
+            const data = JSON.parse(e.target.result);
+            if(data.profiles && data.dataStore) {
+                localStorage.setItem('friendProfiles', JSON.stringify(data.profiles));
+                localStorage.setItem('sky_my_candles', data.myCandles || 0);
+                for (const [key, value] of Object.entries(data.dataStore)) {
+                    localStorage.setItem(key, value);
+                }
+                showToast('📤 匯入成功！重新載入中...');
+                setTimeout(() => location.reload(), 1000);
+            }
+        } catch (err) { showAlert('錯誤', '檔案格式不正確！'); }
+    };
+    reader.readAsText(file);
+}
+
+// --- 渲染 UI ---
+function updateProgressBar() {
+    let nextTierReq = TIER_KEYS[TIER_KEYS.length - 1]; 
+    let currentTierReq = 0;
+    for(let i=0; i<TIER_KEYS.length; i++) {
+        if(affection < TIER_KEYS[i]) { nextTierReq = TIER_KEYS[i]; currentTierReq = TIER_KEYS[i-1]; break; }
+    }
+    if (affection >= nextTierReq) { currentTierReq = nextTierReq; }
+    let percent = 100;
+    if (nextTierReq > currentTierReq) { percent = ((affection - currentTierReq) / (nextTierReq - currentTierReq)) * 100; }
+    
+    document.getElementById('affProgressBar').style.width = isPreviewMode ? '100%' : `${percent}%`;
+    document.getElementById('affProgressText').textContent = isPreviewMode ? 'MAX' : `${affection} / ${nextTierReq}`;
+}
+
+function updateUI(){
+    const t = uiDict[currentLang];
+    document.getElementById('totalAffection').textContent = isPreviewMode ? "MAX" : affection;
+    document.getElementById('totalCandleSpent').textContent = isPreviewMode ? "MAX" : calcTotals();
+    updateProgressBar();
+    
+    const container = document.getElementById('treeContainer');
+    container.innerHTML = '';
+
+    const actionMaxUnlocked = {};
+    items.forEach(i => {
+        if (!actionMaxUnlocked[i.actionId]) actionMaxUnlocked[i.actionId] = 0;
+        const isConsideredUnlocked = isPreviewMode ? true : i.unlocked;
+        if (isConsideredUnlocked && i.level > actionMaxUnlocked[i.actionId]) {
+            actionMaxUnlocked[i.actionId] = i.level;
+        }
+    });
+
+    let visibleItems = items.filter(i => {
+        if (isPreviewMode) {
+            const maxLvl = Math.max(...items.filter(item => item.actionId === i.actionId).map(item => item.level));
+            return i.level === maxLvl;
+        }
+        const currentMax = actionMaxUnlocked[i.actionId] || 0;
+        return currentMax === 0 ? i.level === 1 : (i.level === currentMax || i.level === currentMax + 1);
+    });
+
+    const tierGroups = {};
+    visibleItems.forEach(i => {
+        if(!tierGroups[i.tier]) tierGroups[i.tier] = [];
+        tierGroups[i.tier].push(i);
+    });
+
+    Object.keys(tierGroups).sort((a,b)=> a - b).forEach(tierLv => {
+        const tierRow = document.createElement('div');
+        tierRow.className = 'tier-row';
+        
+        const reqExpForTier = TIER_REQ_EXP[tierLv] || 0;
+        const label = document.createElement('div');
+        label.className = 'tier-label';
+        label.textContent = `— Tier ${tierLv} (${t.need} ${reqExpForTier}) —`;
+        tierRow.appendChild(label); 
+
+        const sortedItems = tierGroups[tierLv].sort((a,b) => a.order - b.order);
+        const chunks = [];
+        for(let i = 0; i < sortedItems.length; i += 3) chunks.push(sortedItems.slice(i, i + 3));
+
+        for(let i = chunks.length - 1; i >= 0; i--) {
+            const itemsRow = document.createElement('div');
+            itemsRow.className = 'items-row';
+            chunks[i].forEach(item => {
+                const itemDiv = createItemDiv(item, actionMaxUnlocked[item.actionId], t);
+                itemsRow.appendChild(itemDiv);
+            });
+            tierRow.appendChild(itemsRow);
+        }
+        container.appendChild(tierRow);
+    });
+}
+
+function createItemDiv(item, currentMaxLevel, t){
+    const div = document.createElement('div');
+    const isVisuallyUnlocked = isPreviewMode ? true : item.unlocked;
+    div.className = `item ${isVisuallyUnlocked ? 'unlocked' : 'locked'}`;
+    const requiredAffection = TIER_REQ_EXP[item.tier] || 0;
+    
+    // 徽章顯示邏輯
+    const badgeContent = isVisuallyUnlocked ? `✅ Lv.${item.level}` : `🕯️ ${item.cst}`;
+
+    const placeholder = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2RkZCIvPjxwYXRoIGQ9Ik0yNSAxNWwtMTAgMTBoMjB6IiBmaWxsPSIjOTk5Ii8+PC9zdmc+';
+
+    div.innerHTML = `
+        <div class="item-badge">${badgeContent}</div>
+        <img src="${item.image || placeholder}" alt="${item.nm}" onerror="this.src='${placeholder}'">
+        <div class="item-name">${item.nm}</div>
+    `;
+
+    // 點擊解鎖 (嚴格順序)
+    div.addEventListener('click', ()=>{
+        if (isPreviewMode) return; 
+        if(!item.unlocked) {
+            // ✅ 恢復必須按順序逐級解鎖的邏輯
+            if(item.level === currentMaxLevel + 1) {
+                if (affection >= requiredAffection) {
+                    item.unlocked = true;
+                    affection += AFFECTION_PER_UNLOCK;
+                    saveState();
+                    updateUI();
+                    
+                    // 播放解鎖特效
+                    const activeCards = document.querySelectorAll('.item.unlocked');
+                    const lastCard = activeCards[activeCards.length-1];
+                    if(lastCard){
+                        lastCard.classList.add('animating');
+                        setTimeout(() => lastCard.classList.remove('animating'), 400);
+                    }
+                } else {
+                    showAlert('⚠️ ' + t.noAff, `解鎖此進度 (Tier ${item.tier}) ${t.need} <b style="color:var(--danger-color);">${requiredAffection}</b> 好感度。<br>目前僅有 ${affection}。`);
+                }
+            } else {
+                showAlert('⚠️ 注意', t.errOrd);
+            }
+        } else {
+            const cancelMsg = t.cancelUnlock.replace('{0}', item.nm);
+            showConfirm('取消解鎖', cancelMsg, () => {
+                item.unlocked = false;
+                affection -= AFFECTION_PER_UNLOCK;
+                if(affection < 0) affection = 0;
+                saveState();
+                updateUI();
+            });
+        }
+    });
+
+    // 右鍵 / 手機長按 計算目標
+    let touchTimer;
+    const onContext = (e) => {
+        e.preventDefault(); 
+        if (isPreviewMode || item.unlocked) return;
+        
+        let costCandles = 0;
+        let levelsToUnlock = [];
+        items.forEach(i => {
+            if (i.actionId === item.actionId && i.level <= item.level && !i.unlocked) {
+                costCandles += parseInt(i.cst) || 0;
+                levelsToUnlock.push(`Lv.${i.level}`);
+            }
+        });
+        
+        const diffAffection = Math.max(0, requiredAffection - affection);
+        const myC = parseInt(document.getElementById('myCandles').value) || 0;
+        const candleStatus = myC >= costCandles ? `<span style="color:var(--success-color);font-weight:bold;">${t.c_enough} (${myC - costCandles})</span>` : `<span style="color:var(--danger-color);font-weight:bold;">${t.c_short} (${costCandles - myC})</span>`;
+        
+        // 根據差額決定顯示「還差 N」或是「已達標」
+        const diffText = diffAffection > 0 
+            ? t.t_diff.replace('{0}', `<span style="color:var(--danger-color)">${diffAffection}</span>`) 
+            : t.t_met;
+
+        const html = `
+            <b>【${item.nm} Lv.${item.level}】</b><br><br>
+            👉 ${t.t_lv}${levelsToUnlock.join(', ')}<br>
+            🕯️ ${t.t_can}<b style="font-size:16px;">${costCandles}</b><br>
+            📦 ${t.t_inv}${candleStatus}<br><br>
+            💖 ${t.t_aff}${requiredAffection} ${diffText}
+        `;
+        showAlert(t.target, html);
+    };
+
+    div.addEventListener('contextmenu', onContext);
+    
+    // 支援手機長按 (0.5秒)
+    div.addEventListener('touchstart', (e) => { touchTimer = setTimeout(()=> onContext(e), 500); }, {passive: true});
+    div.addEventListener('touchend', () => { clearTimeout(touchTimer); });
+    div.addEventListener('touchmove', () => { clearTimeout(touchTimer); });
+
+    return div;
+}
+
+initApp();
+</script>
+</body>
+</html>

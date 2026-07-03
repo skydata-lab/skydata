@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>季節解鎖計算器 | Season Spirit Calculator</title>
+
+<style>
+/* --- CSS 變數：輕鬆管理亮/暗色主題 --- */
+:root {
+    --bg-color: #f4f6f8;
+    --text-color: #333;
+    --text-muted: #666;
+    --card-bg: #ffffff;
+    --header-bg: linear-gradient(135deg, #66a6ff, #89f7fe);
+    --border-color: #e0e0e0;
+    --primary-color: #66a6ff;
+    --primary-hover: #5597f0;
+    --danger-color: #e74c3c;
+    --success-color: #4CAF50;
+    --success-bg: #e7fbe7;
+    --season-color: #ff9800;
+    --season-bg: #fff3e0;
+    --item-bg: #fdfdfd;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a20;
+    --text-color: #f0f0f0;
+    --text-muted: #aaa;
+    --card-bg: #2a2a35;
+    --header-bg: linear-gradient(135deg, #1e3c72, #2a5298);
+    --border-color: #444;
+    --primary-color: #4e8cf5;
+    --item-bg: #33333e;
+    --success-color: #f39c12;
+    --success-bg: #4a3b22;
+    --season-color: #d35400;
+    --season-bg: #5a2e15;
+    --shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+* { box-sizing: border-box; }
+body { font-family: "Segoe UI", -apple-system, sans-serif; background-color: var(--bg-color); margin: 0; padding: 0; color: var(--text-color); transition: background-color 0.3s, color 0.3s; }
+
+/* --- 頂部導航列 (Flexbox 修復手機版重疊問題) --- */
+header { 
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; 
+    background: var(--header-bg); color: #fff; padding: 15px 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); gap: 10px;
+}
+.header-title { flex: 1; font-size: 20px; font-weight: bold; letter-spacing: 1px; text-align: center; min-width: 200px; order: 0;}
+.top-controls, .top-left-controls { display: flex; gap: 8px; align-items: center; }
+.lang-label { font-size: 12px; font-weight: bold; color: rgba(255,255,255,0.9); display: none;}
+.top-btn, .top-select { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: white; padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 12px; transition: 0.2s; outline: none; backdrop-filter: blur(4px); }
+.top-btn:hover, .top-select:hover { background: rgba(255,255,255,0.4); }
+.top-select option { background: #333; color: #fff; }
+
+/* --- 主控台面版 --- */
+.dashboard { background-color: var(--card-bg); padding: 20px; margin: 20px auto; width: 95%; max-width: 850px; border-radius: 16px; box-shadow: var(--shadow); border: 1px solid var(--border-color); transition: 0.3s; }
+.profile-section { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid var(--border-color); flex-wrap: wrap; }
+.profile-section select { padding: 8px; border-radius: 8px; border: 1px solid var(--border-color); outline: none; background: var(--bg-color); color: var(--text-color); font-weight: bold; }
+
+/* --- 優化數據面板 (標籤化) --- */
+.totals { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 12px; font-size: 13px; font-weight: bold; margin-bottom: 15px; color: var(--text-muted);}
+.total-tag { display: flex; align-items: center; background: var(--bg-color); padding: 6px 12px; border-radius: 8px; border: 1px solid var(--border-color); }
+.totals span { font-weight: 900; color: var(--success-color); font-size: 15px; margin-left: 6px; }
+
+/* 進度條 */
+.progress-container { width: 100%; height: 10px; background: var(--border-color); border-radius: 5px; overflow: hidden; margin: 15px 0; }
+.progress-bar { height: 100%; background: var(--success-color); width: 0%; transition: width 0.5s ease; }
+
+.global-controls { display: flex; justify-content: center; gap: 10px; align-items: center; flex-wrap: wrap; padding-top: 10px; border-top: 1px dashed var(--border-color); }
+.global-controls select { padding: 8px; border-radius: 8px; border: 1px solid var(--border-color); font-size: 14px; outline: none; background: var(--bg-color); color: var(--text-color); font-weight: bold; }
+
+button, .btn-secondary { background-color: var(--primary-color); color: white; border: none; border-radius: 8px; padding: 8px 12px; font-size: 13px; cursor: pointer; transition: 0.2s; font-weight: bold; text-decoration: none; }
+button:hover, .btn-secondary:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
+button:active, .btn-secondary:active { transform: translateY(0); }
+.btn-secondary { background-color: #888; }
+.btn-reset { background-color: var(--danger-color); }
+
+/* --- 先祖卡片區塊 --- */
+#spiritsContainer { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 15px; max-width: 1200px; margin: 0 auto; } 
+.spirit { display: flex; flex-direction: column; align-items: center; border: 1px solid var(--border-color); border-radius: 16px; padding: 12px; width: 100%; max-width: 240px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); background-color: var(--card-bg); transition: 0.3s; }
+.spirit:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--primary-color); }
+.spirit-image { width: 85px; height: 85px; border-radius: 50%; margin-bottom: 10px; border: 3px solid var(--border-color); object-fit: cover; background: rgba(0,0,0,0.05); }
+.spirit-header { font-size: 16px; font-weight: bold; margin-bottom: 8px; color: var(--text-color); text-align: center; } 
+.spirit-footer { font-size: 12px; margin-top: 12px; color: var(--text-muted); text-align: center; line-height: 1.6; background: var(--bg-color); padding: 8px; border-radius: 8px; width: 100%; } 
+
+.spirit-controls { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 10px 0; border-top: 1px dashed var(--border-color); width: 100%; font-size: 13px; }
+.input-group { display: flex; align-items: center; justify-content: center; gap: 5px; width: 100%;}
+.spirit-controls input[type="number"] { width: 45px; padding: 4px; font-size: 13px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-color); color: var(--text-color); text-align: center; }
+
+.level-row { display: flex; flex-direction: column-reverse; align-items: center; margin-bottom: 6px; border-top: 1px solid var(--border-color); padding-top: 8px; width: 100%; }
+.level-label { font-weight: bold; font-size: 12px; margin-top: 4px; color: var(--text-muted); }
+
+.items-row { 
+    display: flex; 
+    justify-content: flex-start; 
+    gap: 6px; 
+    margin-bottom: 4px; 
+    width: 198px; /* 固定寬度：3個圖示(62*3) + 2個間距(6*2) */
+    margin-left: auto;
+    margin-right: auto;
+}
+.item { width: 62px; text-align: center; cursor: pointer; border: 2px solid var(--border-color); border-radius: 10px; padding: 4px; transition: 0.2s; background-color: var(--item-bg); flex-shrink: 0; display: flex; flex-direction: column; justify-content: space-between; user-select: none; }
+.item:hover { border-color: var(--primary-color); transform: scale(1.05); }
+.item.unlocked { border-color: var(--success-color); background-color: var(--success-bg); }
+.item.season { border-color: var(--season-color); background-color: var(--season-bg); }
+.item.unlocked.season { border-color: var(--success-color); background-color: var(--success-bg); }
+.item img { width: 100%; height: auto; border-radius: 6px; aspect-ratio: 1; object-fit: contain; }
+.item div { font-size: 10px; margin-top: 3px; line-height: 1.2; word-break: break-all; font-weight: 500;}
+
+/* Toast 提示條 */
+#toastContainer { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1001; display: flex; flex-direction: column; gap: 10px; pointer-events: none; }
+.toast { background: rgba(50, 50, 50, 0.95); color: #fff; padding: 12px 24px; border-radius: 30px; font-size: 14px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); animation: toastFadeIn 0.3s, toastFadeOut 0.3s 2.7s forwards; }
+@keyframes toastFadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes toastFadeOut { from { opacity: 1; } to { opacity: 0; } }
+
+@media (max-width: 480px) {
+    .header-title { order: -1; min-width: 100%; margin-bottom: 10px; }
+    #spiritsContainer { gap: 15px; padding: 10px; }
+    .lang-label { display: none; }
+}
+.collapse-arrow { font-size: 14px; transition: transform 0.25s ease; color: var(--text-muted); }
+.collapsible-header.collapsed .collapse-arrow { transform: rotate(-90deg); }
+.collapsible-body { overflow: hidden; max-height: 2000px; transition: max-height 0.3s ease, opacity 0.25s ease, margin-top 0.25s ease; opacity: 1; margin-top: 8px; }
+.collapsible-body.collapsed { max-height: 0; opacity: 0; margin-top: 0; }
+.version-item { border-left: 3px solid var(--danger-color); padding: 4px 0 4px 12px; margin-bottom: 10px; }
+.version-header { display: flex; gap: 10px; align-items: baseline; }
+.version-tag { font-weight: bold; font-size: 13px; }
+.version-date { font-size: 11px; color: var(--text-muted); }
+.version-content { margin: 4px 0 0; padding-left: 18px; font-size: 12.5px; color: var(--text-muted); }
+
+</style>
+</head>
+<body>
+
+<header>
+    <div class="top-left-controls">
+        <span id="ui-lang-label">語言</span>
+        <select id="langSelect" class="top-select" onchange="changeLang()">
+            <option value="zh-hant">繁體中文</option>
+            <option value="zh">简体中文</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+    <div class="header-title" id="ui-title">季節先祖解鎖計算器</div>
+    <div class="top-controls">
+        <button class="top-btn" onclick="toggleTheme()">🌓 Theme</button>
+        <a href="index.html" class="top-btn">🏠 Home</a>
+    </div>
+    
+</header>
+
+<div class="dashboard">
+    <div class="profile-section">
+        <select id="profileSelect" onchange="switchProfile()"></select>
+        <button onclick="addProfile()" id="ui-add-profile">➕ 新增方案</button>
+        <button class="btn-reset" onclick="deleteProfile()" id="ui-del-profile">刪除</button>
+    </div>
+
+    <!-- 數據標籤化，避免手機版斷行混亂 -->
+    <div class="totals">
+        <div class="total-tag"><span id="ui-t1" style="color: inherit; font-weight: bold; font-size: 13px; margin:0;">總需求季蠟:</span> <span id="totalRequiredCandle">0</span></div>
+        <div class="total-tag"><span id="ui-t2" style="color: inherit; font-weight: bold; font-size: 13px; margin:0;">總好感度:</span> <span id="totalExp">0</span></div>
+        <div class="total-tag"><span id="ui-t3" style="color: inherit; font-weight: bold; font-size: 13px; margin:0;">目前已花:</span> <span id="totalCandle">0</span></div>
+        <div class="total-tag"><span id="ui-t4" style="color: inherit; font-weight: bold; font-size: 13px; margin:0;">還需天數:</span> <span id="daysRequired">0</span></div>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="seasonProgressBar"></div>
+    </div>
+
+    <div class="global-controls">
+        <select id="seasonSelect" onchange="switchSeason()"></select>
+        <button class="btn-reset" onclick="resetSeason()" id="ui-reset-season">重置當前季節</button>
+        <button class="btn-secondary" onclick="exportData()" id="ui-export">📥 匯出</button>
+        <button class="btn-secondary" onclick="document.getElementById('importFile').click()" id="ui-import">📤 匯入</button>
+        <input type="file" id="importFile" accept=".json" style="display:none;" onchange="importData(event)">
+
+        <div class="collapsible-header" id="changelog-header" onclick="toggleChangelog()" style="cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
+        <span>📝 更新紀錄</span>
+        <span class="collapse-arrow">▼</span>
+        </div>
+
+        <div class="collapsible-body" id="changelog-body">
+            <div id="changelog-list"></div>
+        </div>
+    </div>
+</div>
+
+<div id="spiritsContainer"></div>
+<div id="toastContainer"></div>
+
+<script>
+const uiDict = {
+    'zh-hant': { langLabel: '語言', title: '季節先祖解鎖計算器', home: '🏠 首頁', addProf: '➕ 新增方案', delProf: '刪除', t1: '總需求季蠟:', t2: '總好感度:', t3: '目前已花:', t4: '還需天數:', resetSeason: '重置當前季節', compExp: '陪伴好感度', resetSpirit: '重置進度', cst: '季蠟', exp: '好感', profPrompt: '請輸入自定義解鎖方案名稱：', errReq: '你還不能解鎖', errReq2: '需要總好感度達到', export: '📥 匯出', import: '📤 匯入', addExp: '增加' },
+    'zh': { langLabel: '语言', title: '季节先祖解锁计算器', home: '🏠 首页', addProf: '➕ 新增方案', delProf: '删除', t1: '总需求季蜡:', t2: '总好感度:', t3: '目前已花:', t4: '还需天数:', resetSeason: '重置当前季节', compExp: '陪伴好感度', resetSpirit: '重置进度', cst: '季蜡', exp: '好感', profPrompt: '请输入自定义解锁方案名称：', errReq: '你还不能解锁', errReq2: '需要总好感度达到', export: '📥 导出', import: '📤 导入', addExp: '增加' },
+    'en': { langLabel: 'Lang', title: 'Season Spirit Calculator', home: '🏠 Home', addProf: '➕ Add Profile', delProf: 'Delete', t1: 'Req. Candles:', t2: 'Total Affection:', t3: 'Spent:', t4: 'Days Left:', resetSeason: 'Reset Season', compExp: 'Companion Aff.', resetSpirit: 'Reset Progress', cst: 'Cost', exp: 'Aff.', profPrompt: 'Enter profile name:', errReq: 'Cannot unlock', errReq2: 'Requires total affection:', export: '📥 Export', import: '📤 Import', addExp: 'Add' }
+};
+
+const versionData = [
+    { ver: 'v1.0.0', date: '2026-07-04',
+        changes: {
+            'zh-hant': [
+                '首次發布：季節先祖解鎖計算器',
+                '支援先祖解鎖進度追蹤，點擊項目即可標記解鎖',
+                '自動計算總需求季蠟、已花費季蠟與總好感度',
+                '新增陪伴好感度累加功能，可手動輸入好感度數值',
+                '新增「還需天數」估算（依每日蠟燭獲取量與初始蠟燭計算）',
+                '新增進度條顯示當季蠟燭花費比例',
+                '支援多方案切換，可為不同玩家建立獨立進度紀錄',
+                '新增資料匯出/匯入功能，方便備份與跨裝置轉移',
+                '新增單一先祖重置與整季重置功能'
+            ],
+            'zh': [
+                '首次发布：季节先祖解锁计算器',
+                '支持先祖解锁进度追踪，点击项目即可标记解锁',
+                '自动计算总需求季蜡、已花费季蜡与总好感度',
+                '新增陪伴好感度累加功能，可手动输入好感度数值',
+                '新增"还需天数"估算（依每日蜡烛获取量与初始蜡烛计算）',
+                '新增进度条显示当季蜡烛花费比例',
+                '支持多方案切换，可为不同玩家建立独立进度记录',
+                '新增数据导出/导入功能，方便备份与跨设备转移',
+                '新增单一先祖重置与整季重置功能'
+            ],
+            'en': [
+                'Initial release: Season Spirit Calculator',
+                'Track spirit item unlock progress with a single click',
+                'Auto-calculate total required candles, candles spent, and total affection',
+                'Added companion affection tracker with manual input',
+                'Added estimated "days remaining" based on daily candle income and starting candles',
+                'Added progress bar showing candle spending ratio for the season',
+                'Support multiple profiles for tracking different players independently',
+                'Added export/import for backup and cross-device transfer',
+                'Added per-spirit reset and full-season reset',
+            ]
+        }
+    }
+];
+
+let currentLang = localStorage.getItem('sky_tool_lang') || 'zh-hant';
+let rawJSONData = {};
+let allSeasonsData = {};
+let currentSeason = "";
+let items = [];
+let spiritExpMap = {}; 
+const EXP_PER_ITEM = 1; 
+let totalRequiredCandle = 0;
+
+let spiritProfiles = JSON.parse(localStorage.getItem('spiritProfiles')) || [{ id: 'spirit_default', name: '預設方案 / Default' }];
+let currentProfileId = localStorage.getItem('currentSpiritProfileId') || spiritProfiles[0].id;
+
+function initApp() {
+    const theme = localStorage.getItem('sky_tool_theme') || 'light';
+    if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    document.getElementById('langSelect').value = currentLang;
+    
+    fetch('data/spirits.json')
+    .then(resp=>resp.json())
+    .then(data=>{
+        rawJSONData = data;
+        updateUIText();
+        updateProfileDropdown();
+        loadLangData();
+    }).catch(err=>{
+        document.getElementById('spiritsContainer').innerHTML = "<p style='color:red; text-align:center;'>無法載入資料 (Failed to load data).</p>";
+    });
+    renderChangelog();
+    if (localStorage.getItem('sky_tool_changelog_collapsed') !== '0') {
+        document.getElementById('changelog-body').classList.add('collapsed');
+        document.getElementById('changelog-header').classList.add('collapsed');
+    }
+}
+
+function showToast(msg) {
+    const container = document.getElementById('toastContainer');
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = msg;
+    container.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+
+}
+function renderChangelog() {
+        const listContainer = document.getElementById('changelog-list');
+        if (!listContainer || typeof versionData === 'undefined') return;
+    
+        listContainer.innerHTML = versionData.map(item => {
+            const contentList = item.changes[currentLang] || item.changes['en'];
+            const listHtml = contentList.map(text => `<li>${text}</li>`).join('');
+    
+            return `
+                <div class="version-item">
+                    <div class="version-header">
+                        <span class="version-tag">${item.ver}</span>
+                        <span class="version-date">${item.date}</span>
+                    </div>
+                    <ul class="version-content">
+                        ${listHtml}
+                    </ul>
+                </div>
+            `;
+        }).join('');
+    }
+    
+
+// --- 切換邏輯 ---
+function toggleChangelog() {
+        const header = document.getElementById('changelog-header');
+        const body = document.getElementById('changelog-body');
+        const collapsed = body.classList.toggle('collapsed');
+        header.classList.toggle('collapsed', collapsed);
+        localStorage.setItem('sky_tool_changelog_collapsed', collapsed ? '1' : '0');
+    }
+
+function toggleTheme() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    localStorage.setItem('sky_tool_theme', isDark ? 'light' : 'dark');
+}
+
+function changeLang() {
+    currentLang = document.getElementById('langSelect').value;
+    localStorage.setItem('sky_tool_lang', currentLang);
+    updateUIText();
+    loadLangData(); 
+}
+
+function updateUIText() {
+    const t = uiDict[currentLang];
+    document.getElementById('ui-lang-label').textContent = t.langLabel;
+    document.getElementById('ui-title').textContent = t.title;
+    //document.getElementById('ui-home').textContent = t.home;
+    document.getElementById('ui-add-profile').textContent = t.addProf;
+    document.getElementById('ui-del-profile').textContent = t.delProf;
+    document.getElementById('ui-t1').textContent = t.t1;
+    document.getElementById('ui-t2').textContent = t.t2;
+    document.getElementById('ui-t3').textContent = t.t3;
+    document.getElementById('ui-t4').textContent = t.t4;
+    document.getElementById('ui-reset-season').textContent = t.resetSeason;
+    document.getElementById('ui-export').textContent = t.export;
+    document.getElementById('ui-import').textContent = t.import;
+}
+
+function loadLangData() {
+    allSeasonsData = rawJSONData[currentLang] || rawJSONData['zh-hant'] || rawJSONData['en'] || {};
+    const seasonSelect = document.getElementById('seasonSelect');
+    seasonSelect.innerHTML = ''; 
+    
+    const seasons = Object.keys(allSeasonsData);
+    if(seasons.length > 0) {
+        seasons.forEach(seasonName => {
+            const option = document.createElement('option');
+            option.value = seasonName;
+            option.textContent = seasonName;
+            seasonSelect.appendChild(option);
+        });
+        if(!seasons.includes(currentSeason)) currentSeason = seasons[0];
+        seasonSelect.value = currentSeason;
+        loadSeasonData();
+    }
+}
+
+function updateProfileDropdown() {
+    const select = document.getElementById('profileSelect');
+    select.innerHTML = '';
+    spiritProfiles.forEach(p => {
+        const option = document.createElement('option');
+        option.value = p.id;
+        option.textContent = p.name;
+        if (p.id === currentProfileId) option.selected = true;
+        select.appendChild(option);
+    });
+}
+
+function switchProfile() {
+    currentProfileId = document.getElementById('profileSelect').value;
+    localStorage.setItem('currentSpiritProfileId', currentProfileId);
+    loadSeasonData();
+}
+
+function addProfile() {
+    const name = prompt(uiDict[currentLang].profPrompt);
+    if (name && name.trim() !== '') {
+        const newId = 'spirit_profile_' + Date.now();
+        spiritProfiles.push({ id: newId, name: name.trim() });
+        localStorage.setItem('spiritProfiles', JSON.stringify(spiritProfiles));
+        currentProfileId = newId;
+        localStorage.setItem('currentSpiritProfileId', currentProfileId);
+        updateProfileDropdown();
+        loadSeasonData();
+        showToast('✅ 新增方案成功');
+    }
+}
+
+function deleteProfile() {
+    if (spiritProfiles.length <= 1) {
+        showToast('❌ 無法刪除最後一個方案');
+        return;
+    }
+    if (confirm(`確定要刪除當前方案嗎？`)) {
+        localStorage.removeItem(`${currentProfileId}_spiritExpMap`);
+        items.forEach(i => localStorage.removeItem(`${currentProfileId}_${i.key}`));
+        spiritProfiles = spiritProfiles.filter(p => p.id !== currentProfileId);
+        currentProfileId = spiritProfiles[0].id;
+        localStorage.setItem('spiritProfiles', JSON.stringify(spiritProfiles));
+        localStorage.setItem('currentSpiritProfileId', currentProfileId);
+        updateProfileDropdown();
+        loadSeasonData();
+        showToast('🗑️ 方案已刪除');
+    }
+}
+
+function switchSeason() {
+    currentSeason = document.getElementById('seasonSelect').value;
+    loadSeasonData();
+}
+
+function loadSeasonData() {
+    items = [];
+    spiritExpMap = JSON.parse(localStorage.getItem(`${currentProfileId}_spiritExpMap`) || '{}');
+    totalRequiredCandle = 0;
+    const spiritDataMap = {};
+    const seasonData = allSeasonsData[currentSeason];
+
+    Object.keys(seasonData).forEach((key, spiritIndex) => {
+        const spirit = seasonData[key];
+        spiritDataMap[key] = { name: spirit.name, image: spirit.image };
+        const uniqueSpiritKey = `season_data_s${spiritIndex}`; 
+        if(spiritExpMap[uniqueSpiritKey] === undefined) spiritExpMap[uniqueSpiritKey] = 0; 
+        
+        spirit.items.forEach((item, itemIndex) => {
+            item.spiritKey = uniqueSpiritKey; 
+            item.spiritName = spirit.name;
+            item.spiritImage = spirit.image; 
+            item.key = `season_data_s${spiritIndex}_lv${item.level}_i${itemIndex}`;
+            items.push(item);
+            totalRequiredCandle += (parseInt(item.cst) || 0);
+        });
+    });
+
+    items.forEach(i => i.unlocked = JSON.parse(localStorage.getItem(`${currentProfileId}_${i.key}`) || "false"));
+    updateUI(spiritDataMap);
+}
+
+function saveState(){
+    items.forEach(i=>localStorage.setItem(`${currentProfileId}_${i.key}`, i.unlocked));
+    localStorage.setItem(`${currentProfileId}_spiritExpMap`, JSON.stringify(spiritExpMap)); 
+}
+
+function exportData() {
+    const data = { version: 1, profiles: spiritProfiles, dataStore: {} };
+    spiritProfiles.forEach(p => {
+        data.dataStore[`${p.id}_spiritExpMap`] = localStorage.getItem(`${p.id}_spiritExpMap`) || '{}';
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key.startsWith(`${p.id}_season_data_`)) {
+                data.dataStore[key] = localStorage.getItem(key);
+            }
+        }
+    });
+    const blob = new Blob([JSON.stringify(data, null, 4)], {type: 'application/json'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'sky_season_backup.json';
+    a.click();
+    showToast('📥 匯出成功');
+}
+
+function importData(event) {
+    const file = event.target.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        try {
+            const data = JSON.parse(e.target.result);
+            if(data.profiles && data.dataStore) {
+                localStorage.setItem('spiritProfiles', JSON.stringify(data.profiles));
+                for (const [key, value] of Object.entries(data.dataStore)) {
+                    localStorage.setItem(key, value);
+                }
+                showToast('📤 匯入成功！重新載入中...');
+                setTimeout(() => location.reload(), 1000);
+            }
+        } catch (err) { alert('檔案格式錯誤！'); }
+    };
+    reader.readAsText(file);
+}
+
+function calcTotals(){
+    let totalExp=0, totalCandle=0;
+    const spiritTotals={};
+    const spiritRequiredCandles = {};
+
+    items.forEach(i=>{
+        const c = parseInt(i.cst)||0;
+        if(!spiritRequiredCandles[i.spiritKey]) spiritRequiredCandles[i.spiritKey] = 0;
+        spiritRequiredCandles[i.spiritKey] += c;
+
+        if(i.unlocked){
+            const e = parseInt(i.exp)||0;
+            totalExp+=e; totalCandle+=c;
+            if(!spiritTotals[i.spiritKey]) spiritTotals[i.spiritKey]={exp:0,cst:0};
+            spiritTotals[i.spiritKey].exp+=e;
+            spiritTotals[i.spiritKey].cst+=c;
+        }
+    });
+    return {totalExp,totalCandle,spiritTotals, spiritRequiredCandles};
+}
+
+function calcspiritLevels(spiritItems){
+    const levelsExp = {};
+    for(let lv=2; lv<=5; lv++){
+        const prevItems = spiritItems.filter(i=>i.level<lv);
+        const cumExp = prevItems.reduce((sum,i)=>sum+(parseInt(i.exp)||0),0);
+        levelsExp[lv]=cumExp;
+    }
+    return levelsExp;
+}
+
+function calcspiritCurrentExp(spiritKey, spiritItems){
+    const itemsExp = spiritItems.filter(i=>i.unlocked).reduce((sum,i)=>sum+(parseInt(i.exp)||0),0);
+    return itemsExp + (spiritExpMap[spiritKey] || 0); 
+}
+
+function calcMaxLevel(spiritKey, spiritItems){
+    const levelsExp = calcspiritLevels(spiritItems);
+    const currentTotalExp = calcspiritCurrentExp(spiritKey, spiritItems); 
+    let maxLevel=1;
+    for(let lv=2; lv<=5; lv++){
+        if(currentTotalExp >= levelsExp[lv]) maxLevel=lv; 
+        else break;
+    }
+    return maxLevel;
+}
+
+function calcDaysRequired(totalCandleSpent, totalCandleRequired) {
+    const DAILY_CANDLE_GAIN = 6;
+    const INITIAL_CANDLE_START = 30; 
+    let remainingCandles = totalCandleRequired - totalCandleSpent;
+    if (remainingCandles <= 0) return 0;
+    if (remainingCandles > INITIAL_CANDLE_START) remainingCandles -= INITIAL_CANDLE_START;
+    else return 0;
+    return Math.ceil(remainingCandles / DAILY_CANDLE_GAIN);
+}
+
+function updateUI(){
+    const t = uiDict[currentLang];
+    const container = document.getElementById('spiritsContainer');
+    if (!container) return; 
+    container.innerHTML='';
+
+    const totals = calcTotals();
+    const days = calcDaysRequired(totals.totalCandle, totalRequiredCandle);
+    
+    document.getElementById('daysRequired').textContent = days;
+    document.getElementById('totalExp').textContent = totals.totalExp; 
+    document.getElementById('totalCandle').textContent = totals.totalCandle;
+    document.getElementById('totalRequiredCandle').textContent = totalRequiredCandle;
+    
+    let percent = totalRequiredCandle === 0 ? 0 : (totals.totalCandle / totalRequiredCandle) * 100;
+    document.getElementById('seasonProgressBar').style.width = `${percent}%`;
+
+    const spiritsGrouped = {};
+    items.forEach(i=>{
+        if(!spiritsGrouped[i.spiritKey]) spiritsGrouped[i.spiritKey]=[];
+        spiritsGrouped[i.spiritKey].push(i);
+    });
+
+    const ITEMS_PER_ROW = 3; 
+    const maxRowsPerLevel = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0}; 
+    Object.keys(spiritsGrouped).forEach(spiritKey => {
+        const spiritItems = spiritsGrouped[spiritKey];
+        const lvGroups = {};
+        for(let lv=1; lv<=6; lv++) lvGroups[lv] = spiritItems.filter(i=>i.level===lv);
+        
+        for(let lv=1; lv<=6; lv++){
+            const levelItems = lvGroups[lv];
+            if(levelItems.length === 0) continue;
+            
+            let rowCount = 0;
+            const spiritGroups = {};
+            levelItems.forEach(item=>{
+                const sID = item.spirit || 0;
+                if(!spiritGroups[sID]) spiritGroups[sID]=[];
+                spiritGroups[sID].push(item);
+            });
+            
+            Object.keys(spiritGroups).forEach(sID => {
+                const itemsInspirit = spiritGroups[sID];
+                const ns = itemsInspirit.filter(i=>!i.season).length;
+const ss = itemsInspirit.filter(i=>i.season).length;
+const nonSeasonRows = ns > 0 ? Math.ceil(ns / ITEMS_PER_ROW) : 0;
+// 第一個季節併入非季節最後一列，其餘各佔一列
+const seasonRows = ss > 0 ? (ns > 0 ? ss - 1 : ss) : 0;
+rowCount += nonSeasonRows + seasonRows;
+            });
+            
+            if (rowCount > maxRowsPerLevel[lv]) {
+                maxRowsPerLevel[lv] = rowCount;
+            }
+        }
+    });
+    
+    Object.keys(spiritsGrouped).forEach(spiritKey=>{
+        const spiritItems = spiritsGrouped[spiritKey];
+        const spiritName = spiritItems[0].spiritName;
+        const spiritImage = spiritItems[0].spiritImage;
+        
+        const ancDiv = document.createElement('div');
+        ancDiv.className='spirit';
+
+        const imgPlaceholder = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2RkZCIvPjxwYXRoIGQ9Ik0yNSAxNWwtMTAgMTBoMjB6IiBmaWxsPSIjOTk5Ii8+PC9zdmc+';
+        const img = document.createElement('img');
+        img.src = spiritImage || imgPlaceholder;
+        img.className = 'spirit-image';
+        img.alt = spiritName;
+        img.onerror = () => { img.src = imgPlaceholder; };
+        ancDiv.appendChild(img);
+
+        const header = document.createElement('div');
+        header.className='spirit-header';
+        header.textContent = spiritName;
+        ancDiv.appendChild(header);
+        
+        const controlsDiv = document.createElement('div');
+        controlsDiv.className = 'spirit-controls';
+        
+        const currentExpValue = spiritExpMap[spiritKey] || 0;
+
+        const inputGroup = document.createElement('div');
+        inputGroup.className = 'input-group';
+        inputGroup.innerHTML = `<span>${t.compExp}: <b>${currentExpValue}</b></span>`;
+        
+        const actionRow = document.createElement('div');
+        actionRow.className = 'input-group';
+        
+        const inputExp = document.createElement('input');
+        inputExp.type = 'number';
+        inputExp.value = EXP_PER_ITEM; 
+        inputExp.id = `input-${spiritKey}`;
+
+        const btnAddExp = document.createElement('button');
+        btnAddExp.textContent = `${t.addExp}`;
+        btnAddExp.onclick = () => addspiritExp(spiritKey, parseInt(inputExp.value) || EXP_PER_ITEM);
+
+        actionRow.appendChild(inputExp);
+        actionRow.appendChild(btnAddExp);
+
+        const btnReset = document.createElement('button');
+        btnReset.className = 'btn-secondary';
+        btnReset.textContent = t.resetSpirit;
+        btnReset.style.marginTop = '4px';
+        btnReset.onclick = () => resetspirit(spiritKey);
+        
+        controlsDiv.appendChild(inputGroup);
+        controlsDiv.appendChild(actionRow);
+        controlsDiv.appendChild(btnReset);
+        ancDiv.appendChild(controlsDiv);
+        
+        const itemsContainer = document.createElement('div');
+        itemsContainer.style.width = '100%';
+
+        const lvGroups = {};
+        for(let lv=1; lv<=6; lv++){ lvGroups[lv] = spiritItems.filter(i=>i.level===lv); }
+
+        // 由上往下繪製 (固定從 Lv.6 到 Lv.1)
+        [6, 5, 4, 3, 2, 1].forEach(level => {
+            if (maxRowsPerLevel[level] === 0) return; // 這個等級所有先祖都沒有，直接跳過
+
+            const levelItems = lvGroups[level] || [];
+            
+            const levelRowWrapper = document.createElement('div');
+            levelRowWrapper.className='level-row';
+
+            const label = document.createElement('div');
+            label.className='level-label';
+            label.textContent = 'Lv.' + level;
+            levelRowWrapper.appendChild(label);
+
+            let actualRowsRendered = 0; // 記錄這個先祖在這個 Level 實際畫了幾行
+
+            if (levelItems.length > 0) {
+                const spiritGroups = {};
+                levelItems.forEach(item=>{
+                    const sID = item.spirit || 0;
+                    if(!spiritGroups[sID]) spiritGroups[sID]=[];
+                    spiritGroups[sID].push(item);
+                });
+
+                Object.keys(spiritGroups).sort((a,b)=>a-b).forEach(sID=>{
+                    const itemsInspirit = spiritGroups[sID];
+                    const nonSeason = itemsInspirit.filter(i=>!i.season);
+                    const season = itemsInspirit.filter(i=>i.season);
+
+                    // 非季節：每列最多 ITEMS_PER_ROW 個，靠左
+                    for(let i=Math.floor((nonSeason.length-1)/ITEMS_PER_ROW)*ITEMS_PER_ROW; i>=0; i-=ITEMS_PER_ROW){
+                        const slice = nonSeason.slice(i, i+ITEMS_PER_ROW);
+                        const innerRow = document.createElement('div');
+                        innerRow.className='items-row';
+                        slice.forEach(item=>{
+                            innerRow.appendChild(createItemDiv(item, spiritItems, spiritKey, t));
+                        });
+                        levelRowWrapper.insertBefore(innerRow, levelRowWrapper.firstChild);
+                        actualRowsRendered++;
+                    }
+
+                    // 先存好非季節最後一列的參考，之後 insertBefore 會改變 firstChild
+                    const nonSeasonLastRow = nonSeason.length > 0 ? levelRowWrapper.firstChild : null;
+
+                    if(nonSeasonLastRow){
+                        // season[0] 併入非季節那列
+                        if(season.length > 0){
+                            const s0div = createItemDiv(season[0], spiritItems, spiritKey, t);
+                            s0div.style.marginLeft = 'auto'; // ← 加這行，靠右對齊
+                            nonSeasonLastRow.appendChild(s0div);
+                    }
+                        // season[1..n] 各自一列，插在 label 前（正向插入，index 越大越靠近 label = 視覺越上方）
+                        for(let i=1; i<season.length; i++){
+                            const innerRow = document.createElement('div');
+                            innerRow.className='items-row';
+                            innerRow.style.justifyContent = 'flex-end';
+                            innerRow.appendChild(createItemDiv(season[i], spiritItems, spiritKey, t));
+                            levelRowWrapper.insertBefore(innerRow, label);
+                            actualRowsRendered++;
+                        }
+                    } else {
+                        // 沒有非季節，所有季節各自一列，同樣插在 label 前
+                        for(let i=0; i<season.length; i++){
+                            const innerRow = document.createElement('div');
+                            innerRow.className='items-row';
+                            innerRow.style.justifyContent = 'flex-end';
+                            innerRow.appendChild(createItemDiv(season[i], spiritItems, spiritKey, t));
+                            levelRowWrapper.insertBefore(innerRow, label);
+                            actualRowsRendered++;
+                        }
+                    }
+                });
+            } else {
+                // 如果這個先祖沒有這個 Level，把線條和字隱藏，但保留 DOM 結構
+                label.style.visibility = 'hidden';
+                levelRowWrapper.style.borderTopColor = 'transparent';
+            }
+
+            // --- 核心：補齊缺失的行數 (Invisible Padding) ---
+            const paddingRowsNeeded = maxRowsPerLevel[level] - actualRowsRendered;
+            const imgPlaceholder = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==';
+            
+            for(let r = 0; r < paddingRowsNeeded; r++) {
+                const emptyRow = document.createElement('div');
+                emptyRow.className = 'items-row';
+                emptyRow.style.visibility = 'hidden'; // 設為隱形
+                emptyRow.style.pointerEvents = 'none'; // 防止誤觸
+                
+                // 塞入透明假節點撐開高度
+                emptyRow.innerHTML = `
+                    <div class="item" style="border-color:transparent; background:transparent; box-shadow:none;">
+                        <img src="${imgPlaceholder}">
+                        <div>_</div>
+                        <div>_</div>
+                        <div>_</div>
+                    </div>
+                `;
+                levelRowWrapper.insertBefore(emptyRow, label);
+            }
+
+            itemsContainer.appendChild(levelRowWrapper);
+        });
+        
+        ancDiv.appendChild(itemsContainer);
+
+        const totalspiritExp = calcspiritCurrentExp(spiritKey, spiritItems);
+        const spT = totals.spiritTotals[spiritKey]||{exp:0,cst:0}
+        const spiritTotalRequiredCost = totals.spiritRequiredCandles[spiritKey] || 0;
+        
+        const footer = document.createElement('div');
+        footer.className='spirit-footer';
+        footer.innerHTML = `<b>${t.t1}</b> ${spiritTotalRequiredCost} <br> <b>${t.t2}</b> ${totalspiritExp}<br><b>${t.t3}</b> ${spT.cst}`;
+        ancDiv.appendChild(footer);
+
+        container.appendChild(ancDiv);
+    });
+}
+
+function createItemDiv(item, spiritItems, spiritKey, t){
+    const div=document.createElement('div');
+    if(item.unlocked) div.classList.add('unlocked');
+    if(item.season) div.classList.add('season');
+    div.className += ' item';
+    
+    const placeholder = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2RkZCIvPjxwYXRoIGQ9Ik0yNSAxNWwtMTAgMTBoMjB6IiBmaWxsPSIjOTk5Ii8+PC9zdmc+';
+
+    div.innerHTML=`
+        <img class="item-img" src="${item.image || placeholder}" onerror="this.src='${placeholder}'">
+        <div>${item.nm}</div>
+        <div>${t.cst}: ${item.cst}</div>
+        <div>${t.exp}: ${item.exp}</div>
+    `;
+
+    div.addEventListener('click', ()=>{
+        const maxLevel = calcMaxLevel(spiritKey, spiritItems); 
+        if(item.level <= maxLevel || item.unlocked){
+            item.unlocked=!item.unlocked;
+            saveState();
+            updateUI();
+        } else {
+            alert(`⚠️ ${t.errReq} ${item.spiritName} (Lv.${item.level})。\n${t.errReq2} ${calcspiritLevels(spiritItems)[item.level]||'??'}。`);
+        }
+    });
+    return div;
+}
+
+function addspiritExp(spiritKey, amount){
+    if(amount > 0){
+        spiritExpMap[spiritKey] = (spiritExpMap[spiritKey] || 0) + amount;
+        saveState();
+        updateUI();
+    }
+}
+
+function resetspirit(spiritKey){
+    if(confirm(`確定要重置這位先祖的進度嗎？`)){
+        items.filter(i => i.spiritKey === spiritKey).forEach(i => i.unlocked = false);
+        spiritExpMap[spiritKey] = 0;
+        saveState();
+        updateUI();
+    }
+}
+
+function resetSeason(){
+    if(confirm(`⚠️ 確定要重置當前季節的所有進度嗎？`)){
+        items.forEach(i=>i.unlocked=false);
+        Object.keys(spiritExpMap).forEach(key => {
+            spiritExpMap[key] = 0;
+        });
+        saveState();
+        updateUI();
+        showToast('🔄 季節已重置');
+    }
+}
+
+initApp();
+</script>
+</body>
+</html>

@@ -1,0 +1,837 @@
+{
+  "zh-hant": {
+    "狂歡季": {
+      "spirit1": {
+          "name": "狂歡雜耍者",
+          "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Carnival-Juggler-Spirit-cutout.png",
+          "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Carnival-Juggler-Emote-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "動作03", "cst": 24, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Carnival-Juggler-Emote-icon.png"},
+          {"nm": "面具", "cst": 19, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Carnival-Juggler-Mask-icon.png"},
+          {"nm": "魔法", "cst": 7, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Carnival-Juggler-Emote-icon.png"},
+          {"nm": "魔法", "cst": 10, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "項鍊", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Carnival-Juggler-Neck-Accessory-icon.png"},
+          {"nm": "服裝", "cst": 28, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Carnival-Juggler-Outfit-icon.png"},
+          {"nm": "先祖任務", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Carnival-Juggler-Emote-icon.png"},
+          {"nm": "黑色染料", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Black-dye-container-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Season-of-Carnival-Heart-icon.png"}
+              ]
+      },
+      "spirit2": {
+          "name": "狂歡動感舞者"  ,
+          "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Carnival-Athletic-Dancer-Spirit-cutout.png",
+          "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Carnival-Athletic-Dancer-Emote-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "面具", "cst": 19, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Carnival-Athletic-Dancer-Mask-icon.png"},
+          {"nm": "魔法", "cst": 7, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Carnival-Athletic-Dancer-Emote-icon.png"},
+          {"nm": "動作03", "cst": 24, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Carnival-Athletic-Dancer-Emote-icon.png"},
+          {"nm": "白色染料", "cst": 12, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/White-dye-container-icon.png"},
+          {"nm": "斗篷", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Carnival-Athletic-Dancer-Cape-icon.png"},
+          {"nm": "服裝", "cst": 28, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Carnival-Athletic-Dancer-Outfit-icon.png"},
+          {"nm": "先祖任務", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Carnival-Athletic-Dancer-Emote-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Season-of-Carnival-Heart-icon.png"}
+              ]
+      },
+      "spirit3": {
+        "name": "狂歡特技演員",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Carnival-Stunt-Actor-Spirit-cutout.png",
+        "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Carnival-Stunt-Actor-Emote-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "斗篷", "cst": 19, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Carnival-Stunt-Actor-Cape-icon.png"},
+          {"nm": "魔法", "cst": 7, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Carnival-Stunt-Actor-Emote-icon.png"},
+          {"nm": "動作03", "cst": 24, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Carnival-Stunt-Actor-Emote-icon.png"},
+          {"nm": "魔法", "cst": 10, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "服裝", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Carnival-Stunt-Actor-Outfit-icon.png"},
+          {"nm": "髮型", "cst": 28, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Carnival-Stunt-Actor-Hair-icon.png"},
+          {"nm": "先祖任務", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Carnival-Stunt-Actor-Emote-icon.png"},
+          {"nm": "帽子", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Carnival-Stunt-Actor-Head-Accessory-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Season-of-Carnival-Heart-icon.png"}
+              ]
+      },
+      "spirit4": {
+          "name": "狂歡謎題導演",
+          "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Carnival-Puzzle-Director-Spirit-cutout.png",
+          "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Carnival-Puzzle-Director-Emote-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "樂譜", "cst": 19, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"},
+          {"nm": "魔法", "cst": 7, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Carnival-Puzzle-Director-Emote-icon.png"},
+          {"nm": "動作03", "cst": 24, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Carnival-Puzzle-Director-Emote-icon.png"},
+          {"nm": "魔法", "cst": 10, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "服裝", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d1/Carnival-Puzzle-Director-Outfit-icon.png"},
+          {"nm": "帽子", "cst": 28, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Carnival-Puzzle-Director-Head-Accessory-icon.png"},
+          {"nm": "先祖任務", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Carnival-Puzzle-Director-Emote-icon.png"},
+          {"nm": "髮型", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Carnival-Puzzle-Director-Hair-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Season-of-Carnival-Heart-icon.png"}
+              ]
+      }
+    },
+    "遷徙季": {
+      "spirit1": {
+          "name": "遷徙鐘匠",
+          "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Migrating-Bellmaker-cutout.png",
+          "items": [
+          {"nm":"叫聲", "cst": 0,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3b/Migrating-Bellmaker-Call-icon.png"},
+          {"nm":"樂譜", "cst": 17,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"},
+          {"nm":"陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm":"髮型", "cst": 23,"season":false,"level":2,"exp":"3", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Migrating-Bellmaker-Hair-icon.png"},
+          {"nm":"魔法", "cst": 4,"season":false,"level":2,"exp":"3", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"隨機染料", "cst": 0,"season":true,"level":2,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png"},
+          {"nm":"藍色染料", "cst": 9,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Blue-dye-container-icon.png"},
+          {"nm":"魔法", "cst": 6,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"面飾", "cst": 0,"season":true,"level":3,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Migrating-Bellmaker-Face-Accessory-icon.png"},
+          {"nm":"斗篷", "cst": 36,"season":false,"level":4,"exp":"10", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Migrating-Bellmaker-Cape-icon.png"},
+          {"nm":"先祖任务", "cst": 0,"season":false,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm":"魔法", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"季心", "cst": 3,"season":true,"level":5,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season-of-Migration-Heart.png"}
+              ]
+      },
+      "spirit2": {
+          "name": "遷徙鰩語者",
+          "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/Migrating-Manta-Whisperer-Spirit-cutout.png",
+          "items": [
+          {"nm":"動作1", "cst": 0,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Migrating-Manta-Whisperer-emote-icon.png"},
+          {"nm":"魔法", "cst": 2,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm":"髮型", "cst": 23,"season":false,"level":2,"exp":"3", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Migrating-Manta-Whisperer-Hair-icon.png"},
+          {"nm":"魔法", "cst": 4,"season":false,"level":2,"exp":"3", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"動作2", "cst": 0,"season":true,"level":2,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Migrating-Manta-Whisperer-emote-icon.png"},
+          {"nm":"動作3", "cst": 24,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Migrating-Manta-Whisperer-emote-icon.png"},
+          {"nm":"魔法", "cst": 6,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"斗篷", "cst": 0,"season":true,"level":3,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Migrating-Manta-Whisperer-Cape-icon.png"},
+          {"nm":"白色染料", "cst": 12,"season":false,"level":4,"exp":"10", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/White-dye-container-icon.png"},
+          {"nm":"先祖任务", "cst": 0,"season":false,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm":"動作4", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Migrating-Manta-Whisperer-emote-icon.png"},
+          {"nm":"服裝", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Migrating-Manta-Whisperer-Outfit-icon.png"},
+          {"nm":"季心", "cst": 3,"season":true,"level":5,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season-of-Migration-Heart.png"}
+              ]
+      },
+      "spirit3": {
+        "name": "遷徙引蝶人",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/29/Migrating-Butterfly-Charmer-cutout.png",
+        "items": [
+          {"nm":"動作1", "cst": 0,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Migrating-Butterfly-Charmer-emote-icon.png"},
+          {"nm":"魔法", "cst": 2,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm":"黃色染料", "cst": 6,"season":false,"level":2,"exp":"6", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Yellow-dye-container-icon.png"},
+          {"nm":"動作2", "cst": 0,"season":true,"level":2,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Migrating-Butterfly-Charmer-emote-icon.png"},
+          {"nm":"動作3", "cst": 24,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Migrating-Butterfly-Charmer-emote-icon.png"},
+          {"nm":"斗篷", "cst": 30,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Migrating-Butterfly-Charmer-Cape-icon.png"},
+          {"nm":"魔法", "cst": 0,"season":true,"level":3,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"魔法", "cst": 8,"season":false,"level":4,"exp":"10", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"先祖任务", "cst": 0,"season":false,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm":"動作4", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Migrating-Butterfly-Charmer-emote-icon.png"},
+          {"nm":"頭飾", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Migrating-Butterfly-Charmer-Hair-Accessory-icon.png"},
+          {"nm":"季心", "cst": 3,"season":true,"level":5,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season-of-Migration-Heart.png"}
+              ]
+      },
+      "spirit4": {
+          "name": "遷徙鳥語者",
+          "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Migrating-Bird-Whisperer-cutout.png",
+          "items": [
+          {"nm":"動作1", "cst":0,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Migrating-Bird-Whisperer-emote-icon.png"},
+          {"nm":"魔法", "cst":2,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"陪伴先祖", "cst":0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm":"魔法", "cst":4,"season":false,"level":2,"exp":"6", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"動作2", "cst":0,"season":true,"level":2,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Migrating-Bird-Whisperer-emote-icon.png"},
+          {"nm":"動作3", "cst":24,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Migrating-Bird-Whisperer-emote-icon.png"},
+          {"nm":"服裝", "cst":30,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Migrating-Bird-Whisperer-Outfit-icon.png"},
+          {"nm":"魔法", "cst":0,"season":true,"level":3,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"藍色染料", "cst":12,"season":false,"level":4,"exp":"10", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Blue-dye-container-icon.png"},
+          {"nm":"先祖任务", "cst":0,"season":false,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm":"動作4", "cst":0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Migrating-Bird-Whisperer-emote-icon.png"},
+          {"nm":"斗篷", "cst":0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Migrating-Bird-Whisperer-Cape-icon.png"},
+          {"nm":"季心", "cst":3,"season":true,"level":5,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season-of-Migration-Heart.png"}
+              ]
+      },
+      "spirit5": {
+        "name": "遷徙水母語者",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Migrating-Jelly-Whisperer-Spirit-cutout.png",
+        "items": [
+          {"nm":"動作1", "cst": 0,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Migrating-Jelly-Whisperer-emote-icon.png"},
+          {"nm":"魔法", "cst": 2,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm":"魔法", "cst": 4,"season":false,"level":2,"exp":"6", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"動作2", "cst": 0,"season":true,"level":2,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Migrating-Jelly-Whisperer-emote-icon.png"},
+          {"nm":"動作3", "cst": 24,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Migrating-Jelly-Whisperer-emote-icon.png"},
+          {"nm":"青色染料", "cst": 9,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Cyan-dye-container-icon.png"},
+          {"nm":"服裝", "cst": 0,"season":true,"level":3,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Migrating-Jelly-Whisperer-Outfit-icon.png"},
+          {"nm":"帽子", "cst": 36,"season":false,"level":4,"exp":"10", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Migrating-Jelly-Whisperer-Hairpiece-icon.png"},
+          {"nm":"動作4", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Migrating-Jelly-Whisperer-emote-icon.png"},
+          {"nm":"魔法", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"先祖任务", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm":"季心", "cst": 3,"season":true,"level":5,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season-of-Migration-Heart.png"}
+              ]
+      }
+    },
+    "織光季": {
+      "spirit1": {
+        "name": "織光冠軍",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/Lightmending-Champion-cutout.png",
+        "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Lightmending-Champion-Emote-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "面具", "cst": 25, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Lightmending-Champion-Mask-icon.png"},
+          {"nm": "魔法", "cst": 6, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Lightmending-Champion-Emote-icon.png"},
+          {"nm": "動作03", "cst": 28, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Lightmending-Champion-Emote-icon.png"},
+          {"nm": "魔法", "cst": 9, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "頭飾", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Lightmending-Champion-Head-accessory-icon.png"},
+          {"nm": "白色染料", "cst": 15, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/White-dye-container-icon.png"},
+          {"nm": "先祖任务", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Lightmending-Champion-Emote-icon.png"},
+          {"nm": "服裝", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Lightmending-Champion-Outfit-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Season-of-Lightmending-Heart.png"}
+        ]
+      }, 
+      "spirit2": {
+        "name": "織光拓荒者",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Lightmending-Pioneer-cutout.png",
+        "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Pioneer-Emote-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "魔法", "cst": 6, "season": false, "level": 2, "exp": "6", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Pioneer-Emote-icon.png"},
+          {"nm": "動作03", "cst": 28, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Pioneer-Emote-icon.png"},
+          {"nm": "髮型", "cst": 30, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Lightmending-Pioneer-Hair-icon.png"},
+          {"nm": "面具", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Lightmending-Pioneer-Mask-icon.png"},
+          {"nm": "藍色染料", "cst": 15, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Blue-dye-container-icon.png"},
+          {"nm": "先祖任务", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Pioneer-Emote-icon.png"},
+          {"nm": "服裝", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Lightmending-Pioneer-Outfit-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Season-of-Lightmending-Heart.png"}
+        ]
+      }, 
+      "spirit3": {
+        "name": "織光光農",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Lightmending-Light-Catcher-cutout.png",
+        "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Light-Catcher-Emote-icon.png"},
+          {"nm": "面具", "cst": 19, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Lightmending-Light-Catcher-Mask-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "魔法", "cst": 6, "season": false, "level": 2, "exp": "6", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Light-Catcher-Emote-icon.png"},
+          {"nm": "動作03", "cst": 28, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Light-Catcher-Emote-icon.png"},
+          {"nm": "青色染料", "cst": 11, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Cyan-dye-container-icon.png"},
+          {"nm": "帽子", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Lightmending-Light-Catcher-Hairpiece-icon.png"},
+          {"nm": "斗篷", "cst": 38, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Lightmending-Light-Catcher-Cape-icon.png"},
+          {"nm": "先祖任务", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Light-Catcher-Emote-icon.png"},
+          {"nm": "道具", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6b/Lightmending-Light-Catcher-Instrument-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Season-of-Lightmending-Heart.png"}
+        ]
+      }, 
+      "spirit4": {
+        "name": "織光學者",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Lightmending-Light-Scholar-cutout.png",
+        "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Lightmending-Light-Scholar-Emote-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "髮型", "cst": 25, "season": false, "level": 2, "exp": "6", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/Lightmending-Light-Scholar-Hair-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Lightmending-Light-Scholar-Emote-icon.png"},
+          {"nm": "動作03", "cst": 28, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Lightmending-Light-Scholar-Emote-icon.png"},
+          {"nm": "斗篷", "cst": 30, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Lightmending-Light-Scholar-Cape-icon.png"},
+          {"nm": "面具", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Lightmending-Light-Scholar-Mask-icon.png"},
+          {"nm": "魔法", "cst": 12, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "先祖任务", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Lightmending-Light-Scholar-Emote-icon.png"},
+          {"nm": "服裝", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f4/Lightmending-Light-Scholar-Outfit-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Season-of-Lightmending-Heart.png"}
+        ]
+      }
+    },
+      "Season of Test": {
+      "spirit1": {
+        "name": "Test spirit",
+        "image": "",
+        "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Lightmending-Champion-Emote-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 2, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 2, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 2, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 3, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 3, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 3, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 4, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 4, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"}
+        ]
+      }
+    }
+  },"zh": {
+    "狂欢季": {
+      "spirit1": {
+          "name": "狂欢杂耍演员",
+          "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Carnival-Juggler-Spirit-cutout.png",
+          "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Carnival-Juggler-Emote-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "動作03", "cst": 24, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Carnival-Juggler-Emote-icon.png"},
+          {"nm": "面具", "cst": 19, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Carnival-Juggler-Mask-icon.png"},
+          {"nm": "魔法", "cst": 7, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Carnival-Juggler-Emote-icon.png"},
+          {"nm": "魔法", "cst": 10, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "項鍊", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Carnival-Juggler-Neck-Accessory-icon.png"},
+          {"nm": "服裝", "cst": 28, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Carnival-Juggler-Outfit-icon.png"},
+          {"nm": "先祖任務", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Carnival-Juggler-Emote-icon.png"},
+          {"nm": "黑色染料", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Black-dye-container-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Season-of-Carnival-Heart-icon.png"}
+              ]
+      },
+      "spirit2": {
+          "name": "狂欢竞技舞者"  ,
+          "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Carnival-Athletic-Dancer-Spirit-cutout.png",
+          "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Carnival-Athletic-Dancer-Emote-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "面具", "cst": 19, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Carnival-Athletic-Dancer-Mask-icon.png"},
+          {"nm": "魔法", "cst": 7, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Carnival-Athletic-Dancer-Emote-icon.png"},
+          {"nm": "動作03", "cst": 24, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Carnival-Athletic-Dancer-Emote-icon.png"},
+          {"nm": "白色染料", "cst": 12, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/White-dye-container-icon.png"},
+          {"nm": "斗篷", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Carnival-Athletic-Dancer-Cape-icon.png"},
+          {"nm": "服裝", "cst": 28, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Carnival-Athletic-Dancer-Outfit-icon.png"},
+          {"nm": "先祖任務", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Carnival-Athletic-Dancer-Emote-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Season-of-Carnival-Heart-icon.png"}
+              ]
+      },
+      "spirit3": {
+        "name": "狂欢特技演员",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Carnival-Stunt-Actor-Spirit-cutout.png",
+        "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Carnival-Stunt-Actor-Emote-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "斗篷", "cst": 19, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Carnival-Stunt-Actor-Cape-icon.png"},
+          {"nm": "魔法", "cst": 7, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Carnival-Stunt-Actor-Emote-icon.png"},
+          {"nm": "動作03", "cst": 24, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Carnival-Stunt-Actor-Emote-icon.png"},
+          {"nm": "魔法", "cst": 10, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "服裝", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Carnival-Stunt-Actor-Outfit-icon.png"},
+          {"nm": "髮型", "cst": 28, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Carnival-Stunt-Actor-Hair-icon.png"},
+          {"nm": "先祖任務", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Carnival-Stunt-Actor-Emote-icon.png"},
+          {"nm": "帽子", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Carnival-Stunt-Actor-Head-Accessory-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Season-of-Carnival-Heart-icon.png"}
+              ]
+      },
+      "spirit4": {
+          "name": "狂欢谜题导演",
+          "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Carnival-Puzzle-Director-Spirit-cutout.png",
+          "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Carnival-Puzzle-Director-Emote-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "樂譜", "cst": 19, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"},
+          {"nm": "魔法", "cst": 7, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Carnival-Puzzle-Director-Emote-icon.png"},
+          {"nm": "動作03", "cst": 24, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Carnival-Puzzle-Director-Emote-icon.png"},
+          {"nm": "魔法", "cst": 10, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "服裝", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d1/Carnival-Puzzle-Director-Outfit-icon.png"},
+          {"nm": "帽子", "cst": 28, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Carnival-Puzzle-Director-Head-Accessory-icon.png"},
+          {"nm": "先祖任務", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Carnival-Puzzle-Director-Emote-icon.png"},
+          {"nm": "髮型", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Carnival-Puzzle-Director-Hair-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Season-of-Carnival-Heart-icon.png"}
+              ]
+      }
+    },
+    "迁徙季": {
+      "spirit1": {
+          "name": "遷徙鐘匠",
+          "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Migrating-Bellmaker-cutout.png",
+          "items": [
+          {"nm":"叫聲", "cst": 0,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3b/Migrating-Bellmaker-Call-icon.png"},
+          {"nm":"樂譜", "cst": 17,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"},
+          {"nm":"陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm":"髮型", "cst": 23,"season":false,"level":2,"exp":"3", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Migrating-Bellmaker-Hair-icon.png"},
+          {"nm":"魔法", "cst": 4,"season":false,"level":2,"exp":"3", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"隨機染料", "cst": 0,"season":true,"level":2,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png"},
+          {"nm":"藍色染料", "cst": 9,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Blue-dye-container-icon.png"},
+          {"nm":"魔法", "cst": 6,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"面飾", "cst": 0,"season":true,"level":3,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Migrating-Bellmaker-Face-Accessory-icon.png"},
+          {"nm":"斗篷", "cst": 36,"season":false,"level":4,"exp":"10", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Migrating-Bellmaker-Cape-icon.png"},
+          {"nm":"先祖任务", "cst": 0,"season":false,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm":"魔法", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"季心", "cst": 3,"season":true,"level":5,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season-of-Migration-Heart.png"}
+              ]
+      },
+      "spirit2": {
+          "name": "遷徙鰩語者",
+          "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/Migrating-Manta-Whisperer-Spirit-cutout.png",
+          "items": [
+          {"nm":"動作1", "cst": 0,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Migrating-Manta-Whisperer-emote-icon.png"},
+          {"nm":"魔法", "cst": 2,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm":"髮型", "cst": 23,"season":false,"level":2,"exp":"3", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Migrating-Manta-Whisperer-Hair-icon.png"},
+          {"nm":"魔法", "cst": 4,"season":false,"level":2,"exp":"3", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"動作2", "cst": 0,"season":true,"level":2,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Migrating-Manta-Whisperer-emote-icon.png"},
+          {"nm":"動作3", "cst": 24,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Migrating-Manta-Whisperer-emote-icon.png"},
+          {"nm":"魔法", "cst": 6,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"斗篷", "cst": 0,"season":true,"level":3,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Migrating-Manta-Whisperer-Cape-icon.png"},
+          {"nm":"白色染料", "cst": 12,"season":false,"level":4,"exp":"10", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/White-dye-container-icon.png"},
+          {"nm":"先祖任务", "cst": 0,"season":false,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm":"動作4", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Migrating-Manta-Whisperer-emote-icon.png"},
+          {"nm":"服裝", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Migrating-Manta-Whisperer-Outfit-icon.png"},
+          {"nm":"季心", "cst": 3,"season":true,"level":5,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season-of-Migration-Heart.png"}
+              ]
+      },
+      "spirit3": {
+        "name": "遷徙引蝶人",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/29/Migrating-Butterfly-Charmer-cutout.png",
+        "items": [
+          {"nm":"動作1", "cst": 0,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Migrating-Butterfly-Charmer-emote-icon.png"},
+          {"nm":"魔法", "cst": 2,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm":"黃色染料", "cst": 6,"season":false,"level":2,"exp":"6", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Yellow-dye-container-icon.png"},
+          {"nm":"動作2", "cst": 0,"season":true,"level":2,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Migrating-Butterfly-Charmer-emote-icon.png"},
+          {"nm":"動作3", "cst": 24,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Migrating-Butterfly-Charmer-emote-icon.png"},
+          {"nm":"斗篷", "cst": 30,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Migrating-Butterfly-Charmer-Cape-icon.png"},
+          {"nm":"魔法", "cst": 0,"season":true,"level":3,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"魔法", "cst": 8,"season":false,"level":4,"exp":"10", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"先祖任务", "cst": 0,"season":false,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm":"動作4", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Migrating-Butterfly-Charmer-emote-icon.png"},
+          {"nm":"頭飾", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Migrating-Butterfly-Charmer-Hair-Accessory-icon.png"},
+          {"nm":"季心", "cst": 3,"season":true,"level":5,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season-of-Migration-Heart.png"}
+              ]
+      },
+      "spirit4": {
+          "name": "遷徙鳥語者",
+          "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Migrating-Bird-Whisperer-cutout.png",
+          "items": [
+          {"nm":"動作1", "cst":0,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Migrating-Bird-Whisperer-emote-icon.png"},
+          {"nm":"魔法", "cst":2,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"陪伴先祖", "cst":0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm":"魔法", "cst":4,"season":false,"level":2,"exp":"6", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"動作2", "cst":0,"season":true,"level":2,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Migrating-Bird-Whisperer-emote-icon.png"},
+          {"nm":"動作3", "cst":24,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Migrating-Bird-Whisperer-emote-icon.png"},
+          {"nm":"服裝", "cst":30,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Migrating-Bird-Whisperer-Outfit-icon.png"},
+          {"nm":"魔法", "cst":0,"season":true,"level":3,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"藍色染料", "cst":12,"season":false,"level":4,"exp":"10", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Blue-dye-container-icon.png"},
+          {"nm":"先祖任务", "cst":0,"season":false,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm":"動作4", "cst":0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Migrating-Bird-Whisperer-emote-icon.png"},
+          {"nm":"斗篷", "cst":0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Migrating-Bird-Whisperer-Cape-icon.png"},
+          {"nm":"季心", "cst":3,"season":true,"level":5,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season-of-Migration-Heart.png"}
+              ]
+      },
+      "spirit5": {
+        "name": "遷徙水母語者",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Migrating-Jelly-Whisperer-Spirit-cutout.png",
+        "items": [
+          {"nm":"動作1", "cst": 0,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Migrating-Jelly-Whisperer-emote-icon.png"},
+          {"nm":"魔法", "cst": 2,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm":"魔法", "cst": 4,"season":false,"level":2,"exp":"6", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"動作2", "cst": 0,"season":true,"level":2,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Migrating-Jelly-Whisperer-emote-icon.png"},
+          {"nm":"動作3", "cst": 24,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Migrating-Jelly-Whisperer-emote-icon.png"},
+          {"nm":"青色染料", "cst": 9,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Cyan-dye-container-icon.png"},
+          {"nm":"服裝", "cst": 0,"season":true,"level":3,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Migrating-Jelly-Whisperer-Outfit-icon.png"},
+          {"nm":"帽子", "cst": 36,"season":false,"level":4,"exp":"10", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Migrating-Jelly-Whisperer-Hairpiece-icon.png"},
+          {"nm":"動作4", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Migrating-Jelly-Whisperer-emote-icon.png"},
+          {"nm":"魔法", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"先祖任务", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm":"季心", "cst": 3,"season":true,"level":5,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season-of-Migration-Heart.png"}
+              ]
+      }
+    },
+    "织光季": {
+      "spirit1": {
+        "name": "織光冠軍",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/Lightmending-Champion-cutout.png",
+        "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Lightmending-Champion-Emote-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "面具", "cst": 25, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Lightmending-Champion-Mask-icon.png"},
+          {"nm": "魔法", "cst": 6, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Lightmending-Champion-Emote-icon.png"},
+          {"nm": "動作03", "cst": 28, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Lightmending-Champion-Emote-icon.png"},
+          {"nm": "魔法", "cst": 9, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "頭飾", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Lightmending-Champion-Head-accessory-icon.png"},
+          {"nm": "白色染料", "cst": 15, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/White-dye-container-icon.png"},
+          {"nm": "先祖任务", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Lightmending-Champion-Emote-icon.png"},
+          {"nm": "服裝", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Lightmending-Champion-Outfit-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Season-of-Lightmending-Heart.png"}
+        ]
+      }, 
+      "spirit2": {
+        "name": "織光拓荒者",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Lightmending-Pioneer-cutout.png",
+        "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Pioneer-Emote-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "魔法", "cst": 6, "season": false, "level": 2, "exp": "6", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Pioneer-Emote-icon.png"},
+          {"nm": "動作03", "cst": 28, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Pioneer-Emote-icon.png"},
+          {"nm": "髮型", "cst": 30, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Lightmending-Pioneer-Hair-icon.png"},
+          {"nm": "面具", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Lightmending-Pioneer-Mask-icon.png"},
+          {"nm": "藍色染料", "cst": 15, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Blue-dye-container-icon.png"},
+          {"nm": "先祖任务", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Pioneer-Emote-icon.png"},
+          {"nm": "服裝", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Lightmending-Pioneer-Outfit-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Season-of-Lightmending-Heart.png"}
+        ]
+      }, 
+      "spirit3": {
+        "name": "織光光農",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Lightmending-Light-Catcher-cutout.png",
+        "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Light-Catcher-Emote-icon.png"},
+          {"nm": "面具", "cst": 19, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Lightmending-Light-Catcher-Mask-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "魔法", "cst": 6, "season": false, "level": 2, "exp": "6", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Light-Catcher-Emote-icon.png"},
+          {"nm": "動作03", "cst": 28, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Light-Catcher-Emote-icon.png"},
+          {"nm": "青色染料", "cst": 11, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Cyan-dye-container-icon.png"},
+          {"nm": "帽子", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Lightmending-Light-Catcher-Hairpiece-icon.png"},
+          {"nm": "斗篷", "cst": 38, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Lightmending-Light-Catcher-Cape-icon.png"},
+          {"nm": "先祖任务", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Light-Catcher-Emote-icon.png"},
+          {"nm": "道具", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6b/Lightmending-Light-Catcher-Instrument-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Season-of-Lightmending-Heart.png"}
+        ]
+      }, 
+      "spirit4": {
+        "name": "織光學者",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Lightmending-Light-Scholar-cutout.png",
+        "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Lightmending-Light-Scholar-Emote-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "髮型", "cst": 25, "season": false, "level": 2, "exp": "6", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/Lightmending-Light-Scholar-Hair-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Lightmending-Light-Scholar-Emote-icon.png"},
+          {"nm": "動作03", "cst": 28, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Lightmending-Light-Scholar-Emote-icon.png"},
+          {"nm": "斗篷", "cst": 30, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Lightmending-Light-Scholar-Cape-icon.png"},
+          {"nm": "面具", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Lightmending-Light-Scholar-Mask-icon.png"},
+          {"nm": "魔法", "cst": 12, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "先祖任务", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Lightmending-Light-Scholar-Emote-icon.png"},
+          {"nm": "服裝", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f4/Lightmending-Light-Scholar-Outfit-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Season-of-Lightmending-Heart.png"}
+        ]
+      }
+    },
+      "Season of Test": {
+      "spirit1": {
+        "name": "Test spirit",
+        "image": "",
+        "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Lightmending-Champion-Emote-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 2, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 2, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 2, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 3, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 3, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 3, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 4, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 4, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"}
+        ]
+      }
+    }
+  },"en": {
+    "Season of Carnival": {
+      "spirit1": {
+          "name": "Carnival Juggler",
+          "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Carnival-Juggler-Spirit-cutout.png",
+          "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Carnival-Juggler-Emote-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "動作03", "cst": 24, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Carnival-Juggler-Emote-icon.png"},
+          {"nm": "面具", "cst": 19, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Carnival-Juggler-Mask-icon.png"},
+          {"nm": "魔法", "cst": 7, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Carnival-Juggler-Emote-icon.png"},
+          {"nm": "魔法", "cst": 10, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "項鍊", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Carnival-Juggler-Neck-Accessory-icon.png"},
+          {"nm": "服裝", "cst": 28, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Carnival-Juggler-Outfit-icon.png"},
+          {"nm": "先祖任務", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Carnival-Juggler-Emote-icon.png"},
+          {"nm": "黑色染料", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Black-dye-container-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Season-of-Carnival-Heart-icon.png"}
+              ]
+      },
+      "spirit2": {
+          "name": "Carnival Athletic Dancer"  ,
+          "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Carnival-Athletic-Dancer-Spirit-cutout.png",
+          "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Carnival-Athletic-Dancer-Emote-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "面具", "cst": 19, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Carnival-Athletic-Dancer-Mask-icon.png"},
+          {"nm": "魔法", "cst": 7, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Carnival-Athletic-Dancer-Emote-icon.png"},
+          {"nm": "動作03", "cst": 24, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Carnival-Athletic-Dancer-Emote-icon.png"},
+          {"nm": "白色染料", "cst": 12, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/White-dye-container-icon.png"},
+          {"nm": "斗篷", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Carnival-Athletic-Dancer-Cape-icon.png"},
+          {"nm": "服裝", "cst": 28, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Carnival-Athletic-Dancer-Outfit-icon.png"},
+          {"nm": "先祖任務", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Carnival-Athletic-Dancer-Emote-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Season-of-Carnival-Heart-icon.png"}
+              ]
+      },
+      "spirit3": {
+        "name": "Carnival Stunt Actor",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Carnival-Stunt-Actor-Spirit-cutout.png",
+        "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Carnival-Stunt-Actor-Emote-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "斗篷", "cst": 19, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Carnival-Stunt-Actor-Cape-icon.png"},
+          {"nm": "魔法", "cst": 7, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Carnival-Stunt-Actor-Emote-icon.png"},
+          {"nm": "動作03", "cst": 24, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Carnival-Stunt-Actor-Emote-icon.png"},
+          {"nm": "魔法", "cst": 10, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "服裝", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Carnival-Stunt-Actor-Outfit-icon.png"},
+          {"nm": "髮型", "cst": 28, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Carnival-Stunt-Actor-Hair-icon.png"},
+          {"nm": "先祖任務", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Carnival-Stunt-Actor-Emote-icon.png"},
+          {"nm": "帽子", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Carnival-Stunt-Actor-Head-Accessory-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Season-of-Carnival-Heart-icon.png"}
+              ]
+      },
+      "spirit4": {
+          "name": "Carnival Puzzle Director",
+          "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Carnival-Puzzle-Director-Spirit-cutout.png",
+          "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Carnival-Puzzle-Director-Emote-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "樂譜", "cst": 19, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"},
+          {"nm": "魔法", "cst": 7, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Carnival-Puzzle-Director-Emote-icon.png"},
+          {"nm": "動作03", "cst": 24, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Carnival-Puzzle-Director-Emote-icon.png"},
+          {"nm": "魔法", "cst": 10, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "服裝", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d1/Carnival-Puzzle-Director-Outfit-icon.png"},
+          {"nm": "帽子", "cst": 28, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Carnival-Puzzle-Director-Head-Accessory-icon.png"},
+          {"nm": "先祖任務", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Carnival-Puzzle-Director-Emote-icon.png"},
+          {"nm": "髮型", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Carnival-Puzzle-Director-Hair-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Season-of-Carnival-Heart-icon.png"}
+              ]
+      }
+    },
+    "Season of Migration": {
+      "spirit1": {
+          "name": "遷徙鐘匠",
+          "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Migrating-Bellmaker-cutout.png",
+          "items": [
+          {"nm":"叫聲", "cst": 0,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3b/Migrating-Bellmaker-Call-icon.png"},
+          {"nm":"樂譜", "cst": 17,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"},
+          {"nm":"陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm":"髮型", "cst": 23,"season":false,"level":2,"exp":"3", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Migrating-Bellmaker-Hair-icon.png"},
+          {"nm":"魔法", "cst": 4,"season":false,"level":2,"exp":"3", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"隨機染料", "cst": 0,"season":true,"level":2,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png"},
+          {"nm":"藍色染料", "cst": 9,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Blue-dye-container-icon.png"},
+          {"nm":"魔法", "cst": 6,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"面飾", "cst": 0,"season":true,"level":3,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Migrating-Bellmaker-Face-Accessory-icon.png"},
+          {"nm":"斗篷", "cst": 36,"season":false,"level":4,"exp":"10", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Migrating-Bellmaker-Cape-icon.png"},
+          {"nm":"先祖任务", "cst": 0,"season":false,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm":"魔法", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"季心", "cst": 3,"season":true,"level":5,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season-of-Migration-Heart.png"}
+              ]
+      },
+      "spirit2": {
+          "name": "遷徙鰩語者",
+          "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/Migrating-Manta-Whisperer-Spirit-cutout.png",
+          "items": [
+          {"nm":"動作1", "cst": 0,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Migrating-Manta-Whisperer-emote-icon.png"},
+          {"nm":"魔法", "cst": 2,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm":"髮型", "cst": 23,"season":false,"level":2,"exp":"3", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Migrating-Manta-Whisperer-Hair-icon.png"},
+          {"nm":"魔法", "cst": 4,"season":false,"level":2,"exp":"3", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"動作2", "cst": 0,"season":true,"level":2,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Migrating-Manta-Whisperer-emote-icon.png"},
+          {"nm":"動作3", "cst": 24,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Migrating-Manta-Whisperer-emote-icon.png"},
+          {"nm":"魔法", "cst": 6,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"斗篷", "cst": 0,"season":true,"level":3,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Migrating-Manta-Whisperer-Cape-icon.png"},
+          {"nm":"白色染料", "cst": 12,"season":false,"level":4,"exp":"10", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/White-dye-container-icon.png"},
+          {"nm":"先祖任务", "cst": 0,"season":false,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm":"動作4", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Migrating-Manta-Whisperer-emote-icon.png"},
+          {"nm":"服裝", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Migrating-Manta-Whisperer-Outfit-icon.png"},
+          {"nm":"季心", "cst": 3,"season":true,"level":5,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season-of-Migration-Heart.png"}
+              ]
+      },
+      "spirit3": {
+        "name": "遷徙引蝶人",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/29/Migrating-Butterfly-Charmer-cutout.png",
+        "items": [
+          {"nm":"動作1", "cst": 0,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Migrating-Butterfly-Charmer-emote-icon.png"},
+          {"nm":"魔法", "cst": 2,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm":"黃色染料", "cst": 6,"season":false,"level":2,"exp":"6", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Yellow-dye-container-icon.png"},
+          {"nm":"動作2", "cst": 0,"season":true,"level":2,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Migrating-Butterfly-Charmer-emote-icon.png"},
+          {"nm":"動作3", "cst": 24,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Migrating-Butterfly-Charmer-emote-icon.png"},
+          {"nm":"斗篷", "cst": 30,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Migrating-Butterfly-Charmer-Cape-icon.png"},
+          {"nm":"魔法", "cst": 0,"season":true,"level":3,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"魔法", "cst": 8,"season":false,"level":4,"exp":"10", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"先祖任务", "cst": 0,"season":false,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm":"動作4", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Migrating-Butterfly-Charmer-emote-icon.png"},
+          {"nm":"頭飾", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Migrating-Butterfly-Charmer-Hair-Accessory-icon.png"},
+          {"nm":"季心", "cst": 3,"season":true,"level":5,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season-of-Migration-Heart.png"}
+              ]
+      },
+      "spirit4": {
+          "name": "遷徙鳥語者",
+          "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Migrating-Bird-Whisperer-cutout.png",
+          "items": [
+          {"nm":"動作1", "cst":0,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Migrating-Bird-Whisperer-emote-icon.png"},
+          {"nm":"魔法", "cst":2,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"陪伴先祖", "cst":0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm":"魔法", "cst":4,"season":false,"level":2,"exp":"6", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"動作2", "cst":0,"season":true,"level":2,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Migrating-Bird-Whisperer-emote-icon.png"},
+          {"nm":"動作3", "cst":24,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Migrating-Bird-Whisperer-emote-icon.png"},
+          {"nm":"服裝", "cst":30,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Migrating-Bird-Whisperer-Outfit-icon.png"},
+          {"nm":"魔法", "cst":0,"season":true,"level":3,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"藍色染料", "cst":12,"season":false,"level":4,"exp":"10", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Blue-dye-container-icon.png"},
+          {"nm":"先祖任务", "cst":0,"season":false,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm":"動作4", "cst":0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Migrating-Bird-Whisperer-emote-icon.png"},
+          {"nm":"斗篷", "cst":0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Migrating-Bird-Whisperer-Cape-icon.png"},
+          {"nm":"季心", "cst":3,"season":true,"level":5,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season-of-Migration-Heart.png"}
+              ]
+      },
+      "spirit5": {
+        "name": "遷徙水母語者",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Migrating-Jelly-Whisperer-Spirit-cutout.png",
+        "items": [
+          {"nm":"動作1", "cst": 0,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Migrating-Jelly-Whisperer-emote-icon.png"},
+          {"nm":"魔法", "cst": 2,"season":false,"level":1,"exp":"2", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm":"魔法", "cst": 4,"season":false,"level":2,"exp":"6", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"動作2", "cst": 0,"season":true,"level":2,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Migrating-Jelly-Whisperer-emote-icon.png"},
+          {"nm":"動作3", "cst": 24,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Migrating-Jelly-Whisperer-emote-icon.png"},
+          {"nm":"青色染料", "cst": 9,"season":false,"level":3,"exp":"4", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Cyan-dye-container-icon.png"},
+          {"nm":"服裝", "cst": 0,"season":true,"level":3,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Migrating-Jelly-Whisperer-Outfit-icon.png"},
+          {"nm":"帽子", "cst": 36,"season":false,"level":4,"exp":"10", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Migrating-Jelly-Whisperer-Hairpiece-icon.png"},
+          {"nm":"動作4", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Migrating-Jelly-Whisperer-emote-icon.png"},
+          {"nm":"魔法", "cst": 0,"season":true,"level":4,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm":"先祖任务", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm":"季心", "cst": 3,"season":true,"level":5,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season-of-Migration-Heart.png"}
+              ]
+      }
+    },
+    "Season of Lightmending": {
+      "spirit1": {
+        "name": "織光冠軍",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/Lightmending-Champion-cutout.png",
+        "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Lightmending-Champion-Emote-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "面具", "cst": 25, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Lightmending-Champion-Mask-icon.png"},
+          {"nm": "魔法", "cst": 6, "season": false, "level": 2, "exp": "3", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Lightmending-Champion-Emote-icon.png"},
+          {"nm": "動作03", "cst": 28, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Lightmending-Champion-Emote-icon.png"},
+          {"nm": "魔法", "cst": 9, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "頭飾", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Lightmending-Champion-Head-accessory-icon.png"},
+          {"nm": "白色染料", "cst": 15, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/White-dye-container-icon.png"},
+          {"nm": "先祖任务", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Lightmending-Champion-Emote-icon.png"},
+          {"nm": "服裝", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Lightmending-Champion-Outfit-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Season-of-Lightmending-Heart.png"}
+        ]
+      }, 
+      "spirit2": {
+        "name": "織光拓荒者",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Lightmending-Pioneer-cutout.png",
+        "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Pioneer-Emote-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "魔法", "cst": 6, "season": false, "level": 2, "exp": "6", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Pioneer-Emote-icon.png"},
+          {"nm": "動作03", "cst": 28, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Pioneer-Emote-icon.png"},
+          {"nm": "髮型", "cst": 30, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Lightmending-Pioneer-Hair-icon.png"},
+          {"nm": "面具", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Lightmending-Pioneer-Mask-icon.png"},
+          {"nm": "藍色染料", "cst": 15, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Blue-dye-container-icon.png"},
+          {"nm": "先祖任务", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Pioneer-Emote-icon.png"},
+          {"nm": "服裝", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Lightmending-Pioneer-Outfit-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Season-of-Lightmending-Heart.png"}
+        ]
+      }, 
+      "spirit3": {
+        "name": "織光光農",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Lightmending-Light-Catcher-cutout.png",
+        "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Light-Catcher-Emote-icon.png"},
+          {"nm": "面具", "cst": 19, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Lightmending-Light-Catcher-Mask-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "魔法", "cst": 6, "season": false, "level": 2, "exp": "6", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Light-Catcher-Emote-icon.png"},
+          {"nm": "動作03", "cst": 28, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Light-Catcher-Emote-icon.png"},
+          {"nm": "青色染料", "cst": 11, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Cyan-dye-container-icon.png"},
+          {"nm": "帽子", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Lightmending-Light-Catcher-Hairpiece-icon.png"},
+          {"nm": "斗篷", "cst": 38, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Lightmending-Light-Catcher-Cape-icon.png"},
+          {"nm": "先祖任务", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Lightmending-Light-Catcher-Emote-icon.png"},
+          {"nm": "道具", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6b/Lightmending-Light-Catcher-Instrument-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Season-of-Lightmending-Heart.png"}
+        ]
+      }, 
+      "spirit4": {
+        "name": "織光學者",
+        "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Lightmending-Light-Scholar-cutout.png",
+        "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Lightmending-Light-Scholar-Emote-icon.png"},
+          {"nm": "魔法", "cst": 4, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "陪伴先祖", "cst": 0,"season":false,"level":1,"exp":"0", "image":"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Spirit-relationship-follow-icon.png"},
+          {"nm": "髮型", "cst": 25, "season": false, "level": 2, "exp": "6", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/Lightmending-Light-Scholar-Hair-icon.png"},
+          {"nm": "動作02", "cst": 0, "season": true, "level": 2, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Lightmending-Light-Scholar-Emote-icon.png"},
+          {"nm": "動作03", "cst": 28, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Lightmending-Light-Scholar-Emote-icon.png"},
+          {"nm": "斗篷", "cst": 30, "season": false, "level": 3, "exp": "4", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Lightmending-Light-Scholar-Cape-icon.png"},
+          {"nm": "面具", "cst": 0, "season": true, "level": 3, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Lightmending-Light-Scholar-Mask-icon.png"},
+          {"nm": "魔法", "cst": 12, "season": false, "level": 4, "exp": "10", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "先祖任务", "cst": 0, "season": false, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Spirit-relationship-icon.png"},
+          {"nm": "動作04", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Lightmending-Light-Scholar-Emote-icon.png"},
+          {"nm": "服裝", "cst": 0, "season": true, "level": 4, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f4/Lightmending-Light-Scholar-Outfit-icon.png"},
+          {"nm": "季心", "cst": 3, "season": true, "level": 5, "exp": "0", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Season-of-Lightmending-Heart.png"}
+        ]
+      }
+    },
+      "Season of Test": {
+      "spirit1": {
+        "name": "Test spirit",
+        "image": "",
+        "items": [
+          {"nm": "動作01", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Lightmending-Champion-Emote-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 1, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 2, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 2, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 2, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 3, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 3, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 3, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 4, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"},
+          {"nm": "魔法", "cst": 0, "season": false, "level": 4, "exp": "2", "image": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"}
+        ]
+      }
+    }
+  }
+}

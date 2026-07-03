@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>光遇身高計算器 (Sky Height Tool)</title>
+<style>
+    :root {
+        --bg-page: #f4f7f6;
+        --bg-card: #ffffff;
+        --text-main: #333;
+        --text-sub: #666;
+        --border: #e5e5e5;
+        --input-bg: #fff;
+    }
+    body.dark-mode {
+        --bg-page: #1a1a1a;
+        --bg-card: #2a2a2a;
+        --text-main: #ddd;
+        --text-sub: #aaa;
+        --border: #444;
+        --input-bg: #333;
+    }
+
+    body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; background-color: var(--bg-page); color: var(--text-main); margin: 0; padding: 0; line-height: 1.6; transition: 0.3s; }
+    
+    header { text-align: center; background: linear-gradient(135deg, #66a6ff, #89f7fe); color: #fff; padding: 30px 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); position: relative; }
+    body.dark-mode header { background: linear-gradient(135deg, #1e3c72, #2a5298); }
+    header h1 { margin: 0; font-size: 28px; letter-spacing: 2px; }
+    header p { margin: 5px 0 0; font-size: 14px; opacity: 0.9; }
+
+    .top-controls { position: absolute; top: 15px; right: 15px; display: flex; gap: 8px; align-items: center; }
+    .top-left-controls { position: absolute; top: 15px; left: 15px; display: flex; gap: 8px; align-items: center; }
+    .lang-label { font-size: 12px; font-weight: bold; color: rgba(255,255,255,0.9); }
+    .top-btn, .top-select { background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 6px 10px; border-radius: 15px; cursor: pointer; font-size: 12px; transition: 0.2s; outline: none; text-decoration: none; }
+    .top-btn:hover, .top-select:hover { background: rgba(0,0,0,0.4); }
+    .top-select option { background: #333; color: #fff; }
+
+    .container { max-width: 760px; margin: 40px auto; padding: 0 20px; display: flex; flex-direction: column; gap: 20px; }
+    
+    .card { background-color: var(--bg-card); border-radius: 12px; padding: 25px 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 2px solid transparent; transition: 0.3s; }
+    body.dark-mode .card { box-shadow: 0 4px 6px rgba(0,0,0,0.3); border-color: var(--border); }
+    .card h2 { margin: 0 0 15px; font-size: 18px; color: #66a6ff; display: flex; align-items: center; gap: 8px; }
+    body.dark-mode .card h2 { color: #89f7fe; }
+
+    .qr-upload-area { border: 2px dashed var(--border); border-radius: 10px; padding: 30px 16px; text-align: center; cursor: pointer; transition: 0.2s; }
+    .qr-upload-area:hover { border-color: #66a6ff; background: rgba(102,166,255,0.05); }
+    .qr-icon { font-size: 36px; margin-bottom: 10px; }
+
+    label { display: block; font-size: 14px; font-weight: bold; margin: 15px 0 8px; }
+    textarea { width: 100%; box-sizing: border-box; padding: 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--input-bg); color: var(--text-main); font-family: monospace; resize: vertical; min-height: 80px; }
+    
+    button.primary-btn { margin-top: 15px; width: 100%; padding: 12px; border: none; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #66a6ff, #89f7fe); color: #fff; font-size: 16px; font-weight: bold; transition: 0.2s; }
+    button.primary-btn:hover { filter: brightness(1.05); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(102, 166, 255, 0.3); }
+
+    .result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; text-align: center; margin-top: 20px; }
+    .result-item { background: rgba(102, 166, 255, 0.1); border-radius: 8px; padding: 15px 10px; }
+    .result-label { display: block; font-size: 13px; color: var(--text-sub); margin-bottom: 5px; }
+    .result-value { font-size: 24px; font-weight: bold; font-family: "Courier New", monospace; color: #66a6ff; }
+    body.dark-mode .result-value { color: #89f7fe; }
+
+    #status { margin-top: 15px; padding: 10px; border-radius: 8px; font-size: 14px; text-align: center; display: none; }
+    .status-success { background: rgba(46, 204, 113, 0.2); color: #27ae60; }
+    .status-error { background: rgba(231, 76, 60, 0.2); color: #c0392b; }
+    body.dark-mode .status-success { color: #2ecc71; }
+    body.dark-mode .status-error { color: #e74c3c; }
+    .version-item { border-left: 3px solid #66a6ff; padding: 4px 0 4px 12px; margin-bottom: 12px; }
+    .version-header { display: flex; gap: 10px; align-items: baseline; margin-bottom: 4px; }
+    .version-tag { font-weight: bold; color: #2b5876; font-size: 13px; }
+    [data-theme="dark"] .version-tag { color: #89f7fe; }
+    .version-date { font-size: 11px; color: var(--text-sub); }
+    .version-content { margin: 0; padding-left: 18px; font-size: 12.5px; color: var(--text-sub); }
+    .collapsible-header { cursor: pointer; user-select: none; justify-content: space-between; }
+    .collapse-arrow { font-size: 14px; transition: transform 0.25s ease; color: var(--text-sub); }
+    .collapsible-header.collapsed .collapse-arrow { transform: rotate(-90deg); }
+    .collapsible-body { overflow: hidden; max-height: 2000px; transition: max-height 0.3s ease, opacity 0.25s ease, margin-top 0.25s ease; opacity: 1; }
+    .collapsible-body.collapsed { max-height: 0; opacity: 0; margin-top: 0; }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="top-left-controls">
+        <span id="ui-lang-label" class="lang-label">語言</span>
+        <select id="langSelect" class="top-select" onchange="changeLang()">
+            <option value="zh-hant">繁體中文</option>
+            <option value="zh">简体中文</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+
+    <h1 id="ui-title">光遇身高計算器</h1>
+    <p id="ui-subtitle">Sky: Children of the Light — Height Tool</p>
+    
+    <div class="top-controls">
+        <button class="top-btn" onclick="toggleTheme()">🌓 Theme</button>
+        <a href="index.html" class="top-btn">🏠 Home</a>
+    </div>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2 id="ui-input-title">📷 匯入資料</h2>
+        <div class="qr-upload-area" id="qr-upload-area" onclick="document.getElementById('qr-file-input').click()">
+            <div class="qr-icon">📸</div>
+            <div id="ui-qr-text">點擊、拖曳或貼上截圖以上傳 QR Code</div>
+            <input type="file" id="qr-file-input" accept="image/*" style="display:none;" onchange="handleFileSelect(event)">
+        </div>
+        <canvas id="qr-canvas" style="display:none;"></canvas>
+
+        <label id="ui-manual-label">或手動貼上 Base64 字串 / 分享連結</label>
+        <textarea id="b64-input" placeholder="在此貼上..."></textarea>
+        <button class="primary-btn" id="ui-calc-btn" onclick="processData()">計算身高</button>
+        <div id="status"></div>
+    </div>
+
+    <div class="card" id="result-card" style="display:none;">
+        <h2 id="ui-result-title">✨ 計算結果</h2>
+        <div class="result-grid">
+            <div class="result-item">
+                <span class="result-label" id="ui-res-current">目前身高</span>
+                <span class="result-value" id="res-current">--</span>
+            </div>
+            <div class="result-item">
+                <span class="result-label" id="ui-res-tallest">最高可能</span>
+                <span class="result-value" id="res-tallest">--</span>
+            </div>
+            <div class="result-item">
+                <span class="result-label" id="ui-res-shortest">最矮可能</span>
+                <span class="result-value" id="res-shortest">--</span>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+    <h2 class="collapsible-header" id="changelog-header" onclick="toggleChangelog()">
+        <span data-lang-key="sec_changelog_title">更新紀錄</span>
+        <span class="collapse-arrow">▼</span>
+    </h2>
+    <div class="collapsible-body" id="changelog-body">
+        <div id="changelog-list"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+
+
+
+<script>
+    // --- UI & 語言切換 ---
+    const uiDict = {
+        'zh-hant': {
+            'ui-lang-label': '語言', 'ui-title': '光遇身高計算器', 'ui-subtitle': 'Sky: Children of the Light — 身高計算工具',
+            'ui-input-title': '📷 匯入資料', 'ui-qr-text': '點擊、拖曳或貼上截圖以上傳 QR Code',
+            'ui-manual-label': '或手動貼上 Base64 字串 / 分享連結', 'ui-calc-btn': '計算身高',
+            'ui-result-title': '✨ 計算結果', 'ui-res-current': '目前身高', 'ui-res-tallest': '最高可能', 'ui-res-shortest': '最矮可能',
+            'msg_empty': '請先輸入資料', 'msg_success': '計算成功！', 'msg_error': '無法解析資料，請確認格式', 'msg_bounds': '數值超出合理範圍', 'msg_qr_reading': '掃描中...'
+        },
+        'zh': {
+            'ui-lang-label': '语言', 'ui-title': '光遇身高计算器', 'ui-subtitle': 'Sky: Children of the Light — 身高计算工具',
+            'ui-input-title': '📷 导入数据', 'ui-qr-text': '点击、拖拽或粘贴截图以上传 QR Code',
+            'ui-manual-label': '或手动粘贴 Base64 字符串 / 分享链接', 'ui-calc-btn': '计算身高',
+            'ui-result-title': '✨ 计算结果', 'ui-res-current': '当前身高', 'ui-res-tallest': '最高可能', 'ui-res-shortest': '最矮可能',
+            'msg_empty': '请先输入数据', 'msg_success': '计算成功！', 'msg_error': '无法解析数据，请确认格式', 'msg_bounds': '数值超出合理范围', 'msg_qr_reading': '扫描中...'
+        },
+        'en': {
+            'ui-lang-label': 'Language', 'ui-title': 'Sky Height Calculator', 'ui-subtitle': 'Sky: Children of the Light — Height Tool',
+            'ui-input-title': '📷 Import Data', 'ui-qr-text': 'Click, drop or paste screenshot to upload QR Code',
+            'ui-manual-label': 'Or paste Base64 string / Share link', 'ui-calc-btn': 'Calculate',
+            'ui-result-title': '✨ Results', 'ui-res-current': 'Current', 'ui-res-tallest': 'Tallest', 'ui-res-shortest': 'Shortest',
+            'msg_empty': 'Please enter data', 'msg_success': 'Success!', 'msg_error': 'Parse error, check format', 'msg_bounds': 'Values out of bounds', 'msg_qr_reading': 'Scanning...'
+        }
+    };
+    const versionData = [
+    {
+        ver: 'v1.0.0',
+        date: '2026-07-03',
+        changes: {
+            'zh-hant': ['首次發布：支援 QR Code 掃描與手動貼上兩種輸入方式'],
+            'zh': ['首次发布：支持 QR Code 扫描与手动粘贴两种输入方式'],
+            'en': ['Initial release: supports QR code scan and manual paste input']
+        }
+    }
+    ];
+
+    let currentLang = localStorage.getItem('sky_tool_lang') || 'zh-hant';
+    
+    function init() {
+        const theme = localStorage.getItem('sky_tool_theme') || 'light';
+        if (theme === 'dark') document.body.classList.add('dark-mode');
+        document.getElementById('langSelect').value = currentLang;
+        updateUI();
+        renderChangelog();
+        const collapsedPref = localStorage.getItem('sky_tool_changelog_collapsed');
+    const shouldCollapse = collapsedPref === null ? true : collapsedPref === '1';
+    if (shouldCollapse) {
+        document.getElementById('changelog-body').classList.add('collapsed');
+        document.getElementById('changelog-header').classList.add('collapsed');
+}
+    }
+
+    function renderChangelog() {
+        const listContainer = document.getElementById('changelog-list');
+        if (!listContainer || typeof versionData === 'undefined') return;
+    
+        listContainer.innerHTML = versionData.map(item => {
+            const contentList = item.changes[currentLang] || item.changes['en'];
+            const listHtml = contentList.map(text => `<li>${text}</li>`).join('');
+    
+            return `
+                <div class="version-item">
+                    <div class="version-header">
+                        <span class="version-tag">${item.ver}</span>
+                        <span class="version-date">${item.date}</span>
+                    </div>
+                    <ul class="version-content">
+                        ${listHtml}
+                    </ul>
+                </div>
+            `;
+        }).join('');
+    }
+    function toggleChangelog() {
+        const header = document.getElementById('changelog-header');
+        const body = document.getElementById('changelog-body');
+        const collapsed = body.classList.toggle('collapsed');
+        header.classList.toggle('collapsed', collapsed);
+        localStorage.setItem('sky_tool_changelog_collapsed', collapsed ? '1' : '0');
+    }
+
+    function toggleTheme() {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('sky_tool_theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    }
+
+    function changeLang() {
+        currentLang = document.getElementById('langSelect').value;
+        localStorage.setItem('sky_tool_lang', currentLang);
+        updateUI();
+    }
+
+    function updateUI() {
+        const texts = uiDict[currentLang];
+        for (const id in texts) {
+            const element = document.getElementById(id);
+            if (element) {
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.placeholder = texts[id];
+                } else {
+                    element.textContent = texts[id];
+                }
+            }
+        }
+    }
+
+    function getMsg(key) { return uiDict[currentLang][key]; }
+
+    function showStatus(msgKey, isError) {
+        const statusEl = document.getElementById('status');
+        statusEl.textContent = getMsg(msgKey) || msgKey;
+        statusEl.className = isError ? 'status-error' : 'status-success';
+        statusEl.style.display = 'block';
+    }
+
+    // --- 核心計算與解析 ---
+    function calculateStats(height, scale) {
+        const currentHeight = 7.6 - (8.3 * scale) - (3 * height);
+        if (currentHeight < -1 || currentHeight > 15) return { error: 'msg_bounds' };
+        
+        return {
+            current: currentHeight,
+            tallest: 7.6 - (8.3 * scale) - (3 * -2.0),
+            shortest: 7.6 - (8.3 * scale) - (3 * 2.0)
+        };
+    }
+
+    function decodeAndCalculate(rawData) {
+        try {
+            let b64Str = rawData;
+            
+            // 處理 Share Link 提取 Base64
+            const oIndex = b64Str.indexOf("o=");
+            if (oIndex !== -1) b64Str = b64Str.substring(oIndex + 2);
+            
+            // 處理標準 Base64 填充
+            b64Str = b64Str.replace(/-/g, '+').replace(/_/g, '/');
+            const padding = b64Str.length % 4;
+            if (padding) b64Str += '='.repeat(4 - padding);
+
+            const decodedText = atob(b64Str);
+            let height = null, scale = null;
+
+            // 錨點解析邏輯
+            const sAnchorMatch = decodedText.match(/["']s/i);
+            if (sAnchorMatch) {
+                const afterS = decodedText.substring(sAnchorMatch.index + sAnchorMatch[0].length);
+                const scaleCandidates = afterS.match(/(-?\d+\.?\d*(?:[eE][-+]?\d+)?)/g) || [];
+                for (const cand of scaleCandidates) {
+                    const val = parseFloat(cand);
+                    if (cand.includes('.') || cand.toLowerCase().includes('e')) { scale = val; break; } 
+                    else if (Math.abs(val) >= 1000) { scale = val / 1000000000.0; break; }
+                }
+
+                const beforeS = decodedText.substring(0, sAnchorMatch.index);
+                const floatMatches = [...beforeS.matchAll(/(-?\d+\.\d+(?:[eE][-+]?\d+)?)/g)];
+                if (floatMatches.length > 0) {
+                    height = parseFloat(floatMatches[floatMatches.length - 1][1]);
+                } else {
+                    const anyNumMatches = [...beforeS.matchAll(/(-?\d+(?:\.\d+)?)/g)];
+                    if (anyNumMatches.length > 0) height = parseFloat(anyNumMatches[anyNumMatches.length - 1][1]);
+                }
+            }
+
+            if (height !== null && scale !== null) return calculateStats(height, scale);
+            return { error: 'msg_error' };
+        } catch (e) {
+            return { error: 'msg_error' };
+        }
+    }
+
+    function processData() {
+        const input = document.getElementById('b64-input').value.trim();
+        if (!input) { showStatus('msg_empty', true); return; }
+
+        const result = decodeAndCalculate(input);
+        if (result.error) {
+            showStatus(result.error, true);
+            document.getElementById('result-card').style.display = 'none';
+        } else {
+            document.getElementById('res-current').textContent = result.current.toFixed(4);
+            document.getElementById('res-tallest').textContent = result.tallest.toFixed(4);
+            document.getElementById('res-shortest').textContent = result.shortest.toFixed(4);
+            document.getElementById('result-card').style.display = 'block';
+            showStatus('msg_success', false);
+        }
+    }
+
+    // --- QR Code 處理 (精簡版) ---
+    function handleFileSelect(e) {
+        if (e.target.files && e.target.files.length > 0) scanQR(e.target.files[0]);
+    }
+
+    function scanQR(file) {
+        if (typeof jsQR === 'undefined') {
+            showStatus('載入 QR 解析庫失敗，請確認網路狀態或重新整理頁面', true);
+            return;
+        }
+
+        if (!file || !file.type.startsWith('image/')) return;
+        showStatus('msg_qr_reading', false);
+        
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const img = new Image();
+            img.onload = () => {
+                const canvas = document.getElementById('qr-canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const code = jsQR(imageData.data, imageData.width, imageData.height, { inversionAttempts: "dontInvert" });
+                
+                if (code && code.data) {
+                    document.getElementById('b64-input').value = code.data;
+                    processData();
+                } else {
+                    showStatus('msg_error', true);
+                }
+            };
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+
+    // 拖曳與貼上支援
+    const dropZone = document.getElementById('qr-upload-area');
+    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.style.borderColor = '#66a6ff'; });
+    dropZone.addEventListener('dragleave', () => dropZone.style.borderColor = 'var(--border)');
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.style.borderColor = 'var(--border)';
+        if (e.dataTransfer.files.length > 0) scanQR(e.dataTransfer.files[0]);
+    });
+
+    document.addEventListener('paste', (e) => {
+        const items = e.clipboardData.items;
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].type.indexOf('image') !== -1) {
+                e.preventDefault();
+                scanQR(items[i].getAsFile());
+                break;
+            }
+        }
+    });
+
+    init();
+</script>
+</body>
+</html>

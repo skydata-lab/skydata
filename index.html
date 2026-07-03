@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>光遇工具站 (Sky Tools)</title>
+<style>
+    body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; background-color: #f4f7f6; margin: 0; padding: 0; color: #333; line-height: 1.6; transition: 0.3s; }
+    header { text-align: center; background: linear-gradient(135deg, #66a6ff, #89f7fe); color: #fff; padding: 30px 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); position: relative; }
+    header h1 { margin: 0; font-size: 28px; letter-spacing: 2px; }
+    header p { margin: 5px 0 0; font-size: 14px; opacity: 0.9; }
+
+    .top-controls { position: absolute; top: 15px; right: 15px; display: flex; gap: 8px; align-items: center; }
+    .top-left-controls { position: absolute; top: 15px; left: 15px; display: flex; gap: 8px; align-items: center; }
+    .lang-label { font-size: 12px; font-weight: bold; color: rgba(255,255,255,0.9); }
+    .top-btn, .top-select { background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 6px 10px; border-radius: 15px; cursor: pointer; font-size: 12px; transition: 0.2s; outline: none; }
+    .top-btn:hover, .top-select:hover { background: rgba(0,0,0,0.4); }
+    .top-select option { background: #333; color: #fff; }
+
+    .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    .nav-cards { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
+    .card { background-color: #fff; border-radius: 12px; padding: 25px 20px; width: 260px; text-align: center; text-decoration: none; color: #333; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 2px solid transparent; transition: 0.3s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(102, 166, 255, 0.2); border-color: #66a6ff; }
+    .card-icon { font-size: 40px; margin-bottom: 10px; }
+    .card-title { font-size: 18px; font-weight: bold; margin-bottom: 8px; }
+    .card-desc { font-size: 13px; color: #666; transition: 0.3s; }
+
+    /* 黑暗模式 */
+    body.dark-mode { background-color: #1a1a1a; color: #ddd; }
+    body.dark-mode header { background: linear-gradient(135deg, #1e3c72, #2a5298); }
+    body.dark-mode .card { background-color: #2a2a2a; border-color: #444; color: #ddd; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+    body.dark-mode .card:hover { border-color: #89f7fe; box-shadow: 0 8px 15px rgba(137, 247, 254, 0.1); }
+    body.dark-mode .card-desc { color: #aaa; }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="top-left-controls">
+        <span id="ui-lang-label" class="lang-label">語言</span>
+        <select id="langSelect" class="top-select" onchange="changeLang()">
+            <option value="zh-hant">繁體中文</option>
+            <option value="zh">简体中文</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+
+    <h1 id="ui-title">光遇工具站</h1> <p>Sky: Children of the Light Tools</p>
+    
+    <div class="top-controls">
+        <button class="top-btn" onclick="toggleTheme()">🌓 Theme</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="nav-cards">
+        <a href="spirit.html" class="card">
+            <div class="card-icon">🕯️</div>
+            <div class="card-title" id="ui-spirit-title">季節先祖計算器</div>
+            <div class="card-desc" id="ui-spirit-desc">計算先祖解鎖所需的季蠟與好感度，支援多套自定義解鎖方案儲存。</div>
+        </a>
+        <a href="friend.html" class="card">
+            <div class="card-icon">🤝</div>
+            <div class="card-title" id="ui-friend-title">好友樹規劃器</div>
+            <div class="card-desc" id="ui-friend-desc">多好友紀錄支援，規劃各層級解鎖目標、好感度與蠟燭花費試算。</div>
+        </a>
+        <a href="height.html" class="card">
+            <div class="card-icon">👤</div>
+            <div class="card-title" id="ui-height-title">身高測量器</div>
+            <div class="card-desc" id="ui-height-desc">根據造型 QR CODE 來計算光子目前大致身高以及預期最高最矮。</div>
+        </a>
+        <a href="about.html" class="card">
+            <div class="card-icon">👤</div>
+            <div class="card-title" id="ui-about-title">關於此站</div>
+            <div class="card-desc" id="ui-about-desc">查看網站作者資訊、聯絡方式與專案開源原始碼。</div>
+        </a>
+    </div>
+</div>
+
+<script>
+    const uiDict = {
+        'zh-hant': {
+            'ui-lang-label': '語言',
+            'ui-title': '光遇工具站',
+            'ui-spirit-title': '季節先祖計算器',
+            'ui-spirit-desc': '計算先祖解鎖所需的季蠟與好感度，支援多套自定義解鎖方案儲存。',
+            'ui-friend-title': '好友樹規劃器',
+            'ui-friend-desc': '多好友紀錄支援，規劃各層級解鎖目標、好感度與蠟燭花費試算。',
+            'ui-height-title': '身高測量器',
+            'ui-height-desc': '根據造型 QR CODE 來計算光子目前大致身高以及預期最高最矮。',
+            'ui-about-title': '關於此站',
+            'ui-about-desc': '查看網站作者資訊、聯絡方式與專案開源原始碼。'
+        },
+        'zh': {
+            'ui-lang-label': '语言',
+            'ui-title': '光遇工具站',
+            'ui-spirit-title': '季节先祖计算器',
+            'ui-spirit-desc': '计算先祖解锁所需的季蜡与好感度，支持多套自定义解锁方案储存。',
+            'ui-friend-title': '好友树规划器',
+            'ui-friend-desc': '多好友纪录支持，规划各层级解锁目标、好感度与蜡烛花费试算。',
+            'ui-height-title': '身高测量器',
+            'ui-height-desc': '根据造型 QR CODE 来计算光子目前大致身高以及预期最高最矮。',
+            'ui-about-title': '关于此站',
+            'ui-about-desc': '查看网站作者信息、联系方式与项目开源源代码。'
+        },
+        'en': {
+            'ui-lang-label': 'Language',
+            'ui-title': 'Sky Tools',
+            'ui-spirit-title': 'Season Spirit Calculator',
+            'ui-spirit-desc': 'Calculate required seasonal candles and affection. Supports multiple custom save profiles.',
+            'ui-friend-title': 'Friend Tree Planner',
+            'ui-friend-desc': 'Plan friend tree unlocks, calculate costs, and manage multiple friend profiles.',
+            'ui-height-title': 'Height Calculator',
+            'ui-height-desc': 'Calculate your current, max, and min height using your outfit QR code.',
+            'ui-about-title': 'About Site',
+            'ui-about-desc': 'View author info, contact details, and open-source project repository.'
+        }
+    };
+
+    let currentLang = localStorage.getItem('sky_tool_lang') || 'zh-hant';
+    
+    function init() {
+        const theme = localStorage.getItem('sky_tool_theme') || 'light';
+        if (theme === 'dark') document.body.classList.add('dark-mode');
+        document.getElementById('langSelect').value = currentLang;
+        updateUI();
+    }
+
+    function toggleTheme() {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('sky_tool_theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    }
+
+    function changeLang() {
+        currentLang = document.getElementById('langSelect').value;
+        localStorage.setItem('sky_tool_lang', currentLang);
+        updateUI();
+    }
+
+    function updateUI() {
+        const texts = uiDict[currentLang];
+        for (const id in texts) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.textContent = texts[id];
+            }
+        }
+        document.documentElement.lang = currentLang === 'en' ? 'en' : (currentLang === 'zh' ? 'zh-Hans' : 'zh-Hant');
+    }
+
+    init();
+</script>
+</body>
+</html>
